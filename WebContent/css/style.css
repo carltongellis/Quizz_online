@@ -487,7 +487,7 @@ label .glyphicon {
 
 
 /* Home page */
-.margin-t70 {margin-top:70px;margin-bottom: 40px;}
+.margin-t70 {margin-bottom: 40px;}
 /***************** Carousel CSS **************/
 .item img {width:100%; max-height:450px;display: block;}
 .caraous-title {
@@ -532,8 +532,10 @@ background-color: #003b4d       ;
 .dropdown-menu > li > a {padding:8px; border-bottom:1px solid #e2e2e2;}
 
 .navbar-default {
-  background-color: #fff   ;
+  position: static;
+  background-color: #fff;
   padding:25px 0px 15px 0px;
+  /* margin-bottom: 46px; */
   font-weight:400;
   letter-spacing:2px;
   font-size:16px;
@@ -603,4 +605,52 @@ background-color: #003b4d       ;
     color: #d21300;
     background-color: #ffffff;
   }
+}
+
+
+
+
+/* Login page */
+
+
+.main{
+    margin-top: 50px;
+}
+
+.main-content {
+    border: 2px solid #009edf;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 20px 40px;
+    color: #ccc;
+    text-shadow: none;
+}
+
+
+.input-group{
+    margin: 20px 0px;
+}
+.input-group-addon {
+    color: #009edf ;
+    font-size: 17px;
+}
+.login-button{
+    margin: 0px auto;
+    max-width: 200px;;
+    
+}
+
+
+.form-header{
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #009edf;
+    color: #fff;
+    width: 100% ;
+    padding: 20px 0px;
+    border-top-right-radius:10px ;
+    border-top-left-radius:10px 
+}
+.remember{
+    color: black;
 }
