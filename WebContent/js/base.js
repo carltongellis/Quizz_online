@@ -7,6 +7,8 @@ $(function(){
       loading.hide();
     });
     
+    $("#wrapper").toggleClass("toggled");
+    
     $("label.btn").on('click',function () {
       var choice = $(this).find('input:radio').val();
       $('#loadbar').show();
