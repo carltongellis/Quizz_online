@@ -2,8 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+	<!-- Include _head.html file - Tan Tho Nguyen -->
   <%@include file='_head.html'%></td>
   <body>
+  	<!-- Include _nav.html file - Tan Tho Nguyen -->
     <%@include file='_nav.html'%></td>
 
 
@@ -76,6 +78,8 @@
     </div>
 
 
+
+    <!-- Container of web - Tan Tho Nguyen -->
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-12">
