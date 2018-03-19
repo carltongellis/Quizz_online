@@ -536,9 +536,59 @@ background-color: #003b4d       ;
 
 /* Logo */
 img.logo {
-	height: 37px;
+    height: 37px;
 }
 
 .navbar-brand {
-	padding: 0px;
+    padding: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+/* Courses List */
+
+ul.bs-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.bs-box>li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+}
+ul.bs-box>li {
+font-weight: bold;
+}
+ul.bs-box>li>a {
+    border-bottom: 2px solid #2196F3;
+    text-decoration: none;
+    color: black;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    width: 100%;
+}
+ul.bs-box>li>a:hover {
+     box-shadow: 0 3px 14px rgba(37, 93, 193, 2);
+    -webkit-box-shadow: 0 3px 14px rgba(37, 93, 193, 2);
+    -moz-box-shadow: 0 3px 14px rgba(37, 93, 193, 2);
+}
+
+
+   
