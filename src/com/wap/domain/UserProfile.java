@@ -1,5 +1,12 @@
 package com.wap.domain;
 
+/**
+* The UserProfile class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class UserProfile {
 	private User user;
 	
@@ -12,7 +19,7 @@ public class UserProfile {
 		return user;
 	}
 
-	/*
+	/**
 	 * This function is used for showing user profile based
 	 * on user information 
 	*/
@@ -22,14 +29,14 @@ public class UserProfile {
 	
 	// --- Functions --- //
 	
-	/*
+	/**
 	* This function is used for updating password
 	*/
 	public void updatePassword(String newPassword) {
 		this.user.setPassword(newPassword);
 	}
 	
-	/*
+	/**
 	* This function is used for updating email
 	*/
 	public void updateEmail(String newEmail) {

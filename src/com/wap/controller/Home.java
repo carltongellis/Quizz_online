@@ -1,4 +1,3 @@
-
 package com.wap.controller;
 
 import java.io.IOException;
@@ -10,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Home
  */
-//@WebServlet(description = "Login controller", urlPatterns = { "/Login" })
-public class Login extends HttpServlet {
+@WebServlet(description = "Home page", urlPatterns = { "/Home" })
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
     }
