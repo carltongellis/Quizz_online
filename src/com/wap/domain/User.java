@@ -17,10 +17,6 @@ public class User {
 	private String password;
 	private HashMap<String, Quiz> mapQuizTaken = new HashMap<String, Quiz>();
 
-	public User() {
-
-	}
-
 	public User(String username, String email, String password) {
 		this.username = username;
 		this.email = email;

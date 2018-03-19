@@ -30,18 +30,32 @@ public class UserDao {
 		}
 	}
 
-	public User getUser(int id) {// retrieve user a user from database based on user id
+	public User getUser(int id) {// retrieve a user from database based on user id
 		try {
 			String qry = "Select * from user where id=?";
 			PreparedStatement pst = con.prepareStatement(qry);
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User();
+				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
-				user.setUsername(rs.getString("username"));
-				user.setEmail(rs.getString("email"));
-				user.setPassword(rs.getString("password"));
+				return user;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public User getUserByUsername(String username) {// retrieve a user from database based on username
+		try {
+			String qry = "Select * from user where username=?";
+			PreparedStatement pst = con.prepareStatement(qry);
+			pst.setString(1, username);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				user.setId(rs.getInt("id"));
 				return user;
 			}
 		} catch (Exception e) {
@@ -57,11 +71,8 @@ public class UserDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User();
+				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
-				user.setUsername(rs.getString("username"));
-				user.setEmail(rs.getString("email"));
-				user.setPassword(rs.getString("password"));
 
 				userList.add(user);
 			}
@@ -89,8 +100,8 @@ public class UserDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			pst.setString(1, user.getUsername());
 			pst.setString(2, user.getEmail());
-			pst.setString(2, user.getPassword());
-			pst.setInt(3, user.getId());
+			pst.setString(3, user.getPassword());
+			pst.setInt(4, user.getId());
 			pst.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

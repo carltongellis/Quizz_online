@@ -2,7 +2,6 @@
 package com.wap.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -11,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.wap.dao.UserDao;
 import com.wap.domain.User;
@@ -45,17 +45,34 @@ public class Login extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		/*
+		 * Added By Carlton Retrieve use and validate password
+		 */
+
+		HttpSession session = null;
 		UserDao userDao = new UserDao();
-		userDao.insertUsert(new User("vy", "vy@mail.com", "123edfghjuy"));
-		User user = userDao.getUser(1);
+		User user = userDao.getUserByUsername(request.getParameter("username"));
+		// rd;
+		// RequestDispatcher rd = null;
+		// validate user
+		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
+			session = request.getSession(true);
+			session.setAttribute("user", user);
+			session.setMaxInactiveInterval(60);
 
-		PrintWriter out = response.getWriter();
+			response.sendRedirect("index.jsp");
 
-		out.println("user name: " + user.getUsername() + "<br />");
-		out.println("password: " + user.getPassword() + "<br />");
-		out.println("email: " + user.getEmail());
+		} else {
+			// response.
+			// response.sendRedirect("Login.html");
+			// out.print("Sorry, username or password error!");
+			request.setAttribute("error",
+					"Your username or password was incorrect, enter correct credentials and try again!");
+			request.getRequestDispatcher("Login.jsp").forward(request, response);
+		}
+
+		/// session.invalidate();
 
 	}
 
