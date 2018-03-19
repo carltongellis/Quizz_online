@@ -16,7 +16,11 @@
           <h1 class="text-center ">Signup form </h1>
         </div>
         <div class="main-content">
-            <form action="SignUp" method="post">
+            <form id="formSignup" action="SignUp" method="post">
+              <div class="text-danger">
+              
+              </div>
+
               <div class="input-group ">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                 <input id="userName" type="text" class="form-control" name="userName" placeholder="Username">
