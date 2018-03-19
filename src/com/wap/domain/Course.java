@@ -2,6 +2,13 @@ package com.wap.domain;
 
 import java.time.LocalDate;
 
+/**
+* The Course class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class Course {
 	private String name;
 	private String description;
@@ -34,7 +41,7 @@ public class Course {
 	
 	// --- Functions --- //
 	
-	/*
+	/**
 	* This function is used for random creating quiz
 	* for each user
 	*/

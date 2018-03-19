@@ -3,6 +3,13 @@ package com.wap.domain;
 import java.time.LocalDate;
 import java.util.HashMap;
 
+/**
+* The User class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class User {
 	private Integer id;
 	private String username;
@@ -50,7 +57,7 @@ public class User {
 
 	// --- Functions --- //
 
-	/*
+	/**
 	 * This function is used for starting quiz after user choose the course
 	 */
 	public Quiz takeQuiz(Course course, LocalDate dateTaken) {
@@ -62,7 +69,7 @@ public class User {
 		return course.getQuiz();
 	}
 
-	/*
+	/**
 	 * This function is used for choosing the course testing
 	 */
 	public Course chooseCourse(String courseName) {

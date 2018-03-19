@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SignUp
+ * Servlet implementation class Home
  */
-//@WebServlet(description = "Sign Up Page", urlPatterns = { "/SignUp" })
-public class SignUp extends HttpServlet {
+@WebServlet(description = "Home page", urlPatterns = { "/Home" })
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignUp() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,11 +35,7 @@ public class SignUp extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		// Init response text/html
-		response.setContentType("text/html");
-		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

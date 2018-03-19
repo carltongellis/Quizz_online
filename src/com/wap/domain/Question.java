@@ -3,6 +3,13 @@ package com.wap.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+* The Question class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class Question {
 	private String questionContent;
 	private String bestAnswer;
