@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/com.wap.controller/SignUp" method="post">
+<form action="SignUp" method="post">
 Name:<input type="text" name="userName" /><br/><br/>
 Password:<input type="password" name="userPass"/><br/><br/>
 Email ID:<input type="text" name="userEmail"/><br/><br/>
