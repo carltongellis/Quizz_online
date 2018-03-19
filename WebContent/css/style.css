@@ -532,3 +532,13 @@ background-color: #003b4d       ;
 .thumbnail.member {
     text-align: center;
 }
+
+
+/* Logo */
+img.logo {
+	height: 37px;
+}
+
+.navbar-brand {
+	padding: 0px;
+}
