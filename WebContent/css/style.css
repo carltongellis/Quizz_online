@@ -529,6 +529,6 @@ background-color: #003b4d       ;
     color: black;
 }
 
-.thumbnail.member .caption {
+.thumbnail.member {
     text-align: center;
 }
