@@ -528,3 +528,7 @@ background-color: #003b4d       ;
 .remember{
     color: black;
 }
+
+.thumbnail.member .caption {
+    text-align: center;
+}
