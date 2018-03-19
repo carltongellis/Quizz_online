@@ -4,6 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+* The Quiz class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class Quiz {
 	private Integer numberQuestion = 10;
 	private String result = "";
@@ -62,7 +69,7 @@ public class Quiz {
 	
 	// --- Functions --- //
 	
-	/*
+	/**
 	 * This function is used for random loading
 	 * question from database
 	*/

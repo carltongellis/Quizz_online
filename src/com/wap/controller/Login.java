@@ -1,3 +1,4 @@
+
 package com.wap.controller;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ import com.wap.domain.User;
 /**
  * Servlet implementation class Login
  */
-@WebServlet(description = "Login controller", urlPatterns = { "/Login" })
+//@WebServlet(description = "Login controller", urlPatterns = { "/Login" })
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -3,6 +3,13 @@ package com.wap.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+* The Page class
+*
+* @author  Vy Nguyen
+* @version 1.0
+* @since   2018-03-18 
+*/
 public class Page {
 	private Integer numberUser = 0; // total number of user in web page
 	private List<User> lstUser = new ArrayList<User>();
@@ -29,10 +36,11 @@ public class Page {
 	}
 
 	// Functions
-
-	/*
-	 * This function is used for create new user when user sign up
-	 */
+	
+	/**
+	 * This function is used for create new user when
+	 * user sign up
+	*/
 	public void createUser(String userName, String email, String password) {
 		User newUser = new User(userName, email, password);
 		this.addUser(newUser);
@@ -41,17 +49,17 @@ public class Page {
 		this.numberUser++;
 	}
 
-	/* User login */
+	/** User login */
 	public void login(User user) {
 
 	}
 
-	/* User logout */
+	/** User logout */
 	public void logout(User user) {
 
 	}
 
-	/*
+	/**
 	 * This function is used for loading course from database
 	 */
 	public void loadCourse() {
