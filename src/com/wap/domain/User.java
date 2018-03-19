@@ -1,7 +1,6 @@
 package com.wap.domain;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class User {
@@ -56,6 +55,10 @@ public class User {
 	*/
 	public Quiz takeQuiz(Course course, LocalDate dateTaken) {
 		course.createQuiz(dateTaken);
+		
+		// Add to map
+		this.mapQuizTaken.put(course.getName(), course.getQuiz());
+		
 		return course.getQuiz();
 	}
 	

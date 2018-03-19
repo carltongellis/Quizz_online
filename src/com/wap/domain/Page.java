@@ -35,7 +35,11 @@ public class Page {
 	 * user sign up
 	*/
 	public void createUser(String userName, String email, String password) {
+		User newUser = new User(userName, email, password);
+		this.addUser(newUser);
 		
+		// Increase number of user
+		this.numberUser++;
 	}
 	
 	/* User login */
@@ -45,6 +49,13 @@ public class Page {
 	
 	/* User logout */
 	public void logout(User user) {
+		
+	}
+	
+	/*
+	 * This function is used for loading course from database
+	*/
+	public void loadCourse() {
 		
 	}
 }
