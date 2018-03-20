@@ -22,14 +22,14 @@ import com.wap.domain.User;
  * @author vynguyen
  * @date 2018-03-19
  */
-@WebServlet(description = "Show profile page", urlPatterns = { "/ShowProfile" })
-public class ShowProfileController extends HttpServlet {
+@WebServlet(description = "Show profile page", urlPatterns = { "/Profile" })
+public class ProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowProfileController() {
+    public ProfileController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,17 +51,10 @@ public class ShowProfileController extends HttpServlet {
 		// Init response text/html
 		response.setContentType("application/json");
 		
-		String button = request.getParameter("button");
 		String userName = request.getParameter("userName");
 		String userEmail = request.getParameter("email");
 		String userNewPassword = request.getParameter("newPassword");
 		String userConfirmNewPassword = request.getParameter("confirmNewPassword");
-		
-		// If cancel button, return back to index page
-		if (button.equals("cancel")) {
-			response.sendRedirect("index.jsp");
-			return;
-		}
 		
 		// Regular expression
 		String userEmailRegx = "^[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$";
