@@ -16,16 +16,18 @@ import com.wap.dao.UserDao;
 import com.wap.domain.User;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Login Controller
+ * @author vynguyen
+ * @date 2018-03-18
  */
 @WebServlet(description = "Login controller", urlPatterns = { "/Login" })
-public class Login extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Login() {
+	public LoginController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -49,12 +51,10 @@ public class Login extends HttpServlet {
 		/*
 		 * Added By Carlton Retrieve use and validate password
 		 */
-
 		HttpSession session = null;
 		UserDao userDao = new UserDao();
 		User user = userDao.getUserByUsername(request.getParameter("username"));
-		// rd;
-		// RequestDispatcher rd = null;
+
 		// validate user
 		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
 			session = request.getSession(true);
@@ -62,18 +62,11 @@ public class Login extends HttpServlet {
 			session.setMaxInactiveInterval(60);
 
 			response.sendRedirect("index.jsp");
-
 		} else {
-			// response.
-			// response.sendRedirect("Login.html");
-			// out.print("Sorry, username or password error!");
 			request.setAttribute("error",
 					"Your username or password was incorrect, enter correct credentials and try again!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
-
-		/// session.invalidate();
-
 	}
 
 	/**
