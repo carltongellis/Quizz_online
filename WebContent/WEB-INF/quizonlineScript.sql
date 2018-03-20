@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `quizonline` /*!40100 DEFAULT CHARACTER SET utf8 
 USE `quizonline`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: localhost    Database: quizonline
+-- Host: 127.0.0.1    Database: quizonline
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 
@@ -27,11 +27,10 @@ DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `code` varchar(45) NOT NULL,
+  `description` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`),
-  UNIQUE KEY `code_UNIQUE` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +47,7 @@ CREATE TABLE `question` (
   PRIMARY KEY (`id`),
   KEY `id_idx` (`courseid`),
   CONSTRAINT `id` FOREIGN KEY (`courseid`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +65,7 @@ CREATE TABLE `questionoption` (
   PRIMARY KEY (`id`),
   KEY `id_idx` (`questionid`),
   CONSTRAINT `idq` FOREIGN KEY (`questionid`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,9 +79,10 @@ CREATE TABLE `quiz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) DEFAULT NULL,
   `courseid` int(11) DEFAULT NULL,
-  `date` timestamp(6) NULL DEFAULT NULL,
-  `timestart` time(6) DEFAULT NULL,
-  `timeend` time(6) DEFAULT NULL,
+  `date` varchar(50) DEFAULT NULL,
+  `timestart` varchar(50) DEFAULT NULL,
+  `timeend` varchar(50) DEFAULT NULL,
+  `score` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cid_idx` (`courseid`),
   KEY `uid_idx` (`userid`),
@@ -130,7 +130,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -142,4 +142,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-19 11:24:10
+-- Dump completed on 2018-03-20 15:44:21
