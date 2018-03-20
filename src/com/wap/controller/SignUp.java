@@ -3,6 +3,7 @@ package com.wap.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -62,37 +63,37 @@ public class SignUp extends HttpServlet {
 		// Init JSON object
 		JSONObject jsob = new JSONObject();
 		jsob.put("result", "failed");
-		HashMap<String, String> failedMessage = new HashMap<String, String>();
+		LinkedList<String> failedMessage = new LinkedList<String>();
 		
 		// Get message if any field is not matched
 		boolean isFailed = false;
 		if (userName.isEmpty()) {
-			failedMessage.put("userName", "User name is empty.");
+			failedMessage.add("User name is empty.");
 			isFailed = true;
 		}
 		
 		if (userPassword.isEmpty()) {
-			failedMessage.put("userPassword", "User password is empty.");
+			failedMessage.add("User password is empty.");
 			isFailed = true;
 		}
 		
 		if (userEmail.isEmpty()) {
-			failedMessage.put("userEmail", "User email is empty.");
+			failedMessage.add("User email is empty.");
 			isFailed = true;
 		}
 		
 		if (!userName.matches(userNameRegx)) {
-			failedMessage.put("userNameRegx", "User name is less than 6 charactors and is not match charactors.");
+			failedMessage.add("User name is less than 6 charactors and is not match charactors.");
 			isFailed = true;
 		}
 		
 		if (!userEmail.matches(userEmailRegx)) {
-			failedMessage.put("userEmailRegx", "User email is not matched.");
+			failedMessage.add("User email is not matched.");
 			isFailed = true;
 		}
 		
 		if (userPassword.length() < 6) {
-			failedMessage.put("userPasswordLength", "User password is less than 6 charactors.");
+			failedMessage.add("User password is less than 6 charactors.");
 			isFailed = true;
 		}
 		
