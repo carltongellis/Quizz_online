@@ -89,6 +89,44 @@ $(function(){
 
 
 
+
+  // Call AJAX to submit form Exam - Tan Tho Nguyen
+  $("form#formExam").submit(function(e) {
+    var json = {}
+
+    $("form#formExam label.active .value").each(function() {
+      obj[''] = $( this ).text();
+    });
+
+    // $.ajax({
+    //   url: "Course",
+    //   type: "POST",
+    //   data: {
+    //     userName: $("input[name=userName]").val(),
+    //     email: $("input[name=email]").val(),
+    //     newPassword: $("input[name=newPassword]").val(),
+    //     confirmNewPassword: $("input[name=confirmNewPassword]").val()
+    //   }
+    // }).done(function (data) {
+    //   $("#message").html("");
+    //   $("#message").append("<ul>");
+    //   if (data.result == "failed") {
+    //     $("#message").removeClass("alert alert-success").addClass("alert alert-danger");;
+    //     for (var i = 0; i < data.message.length; i++) {
+    //       $("#message").append("<li>" + data.message[i] + "</li>");
+    //     }
+    //   } else {
+    //     $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
+    //     $("#message").append("<li>Update successfull</li>");
+    //   }
+    //   $("#message").append("</ul>");
+    // });
+
+    e.preventDefault();
+  });
+
+
+
   // Highlight current page navigation link - Tan Tho Nguyen
   function highlight() {
     var url = window.location.href;
