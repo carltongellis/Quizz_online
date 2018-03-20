@@ -17,7 +17,7 @@
         </div>
         <div class="main-content">
             <form id="formSignup" action="SignUp" method="post">
-              <div id="error_message" class="text-danger">
+              <div id="message" class="text-danger">
               
               </div>
 

@@ -1,4 +1,5 @@
 $(function(){
+  // Check AJAX call to display loading icon - Tan Tho Nguyen
   var loading = $('#loadbar').hide();
   $(document)
   .ajaxStart(function () {
@@ -20,6 +21,8 @@ $(function(){
   });
 
 
+
+  // Call AJAX to submit form - Tan Tho Nguyen
   $("form#formSignup").submit(function(e) {
 
     $.ajax({
@@ -31,16 +34,19 @@ $(function(){
         userPass: $("#userPass").val()
       }
     }).done(function (data) {
-      $("#error_message").html("");
-      $("#error_message").append("<ul>");
+      $("#message").html("");
+      $("#message").append("<ul>");
       if (data.result == "failed") {
+        $("#message").removeClass("text-primary").addClass("text-danger");;
         for (var i = 0; i < data.message.length; i++) {
-          $("#error_message").append("<li>" + data.message[i] + "</li>");
+          $("#message").append("<li>" + data.message[i] + "</li>");
         }
       } else {
-        $("#error_message").append("<li>Register successfull</li>");
+        $("#message").removeClass("text-danger").addClass("text-primary");;
+        $("#message").append("<li>Register successfull</li>");
+        window.location.href = "/Quizz_online/Login.jsp";
       }
-      $("#error_message").append("</ul>");
+      $("#message").append("</ul>");
     });
 
     e.preventDefault();
