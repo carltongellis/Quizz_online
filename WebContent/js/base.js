@@ -101,7 +101,7 @@ $(function(){
         }
     });
 
-    if (activePage.indexOf(".jsp") < 0 || activePage.indexOf("index") >= 0) {
+    if (activePage.indexOf("index") >= 0) {
       $("li.index").addClass("active");
     }
   }
