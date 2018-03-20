@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="/Quizz_online">
       	<img alt="logo" src="img/logo.png" class="logo">
       </a>
     </div>
@@ -23,14 +23,7 @@
         <li><a href="About.jsp">About Us</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">FPP</a></li>
-              <li><a href="#">MPP</a></li>
-              <li><a href="#">WAP</a></li>
-            </ul>
-          </li>
+          <li><a href="courses.jsp">Courses</a></li>
           <li><a href="#">History</a></li>
           <li><a href="#">Profile</a></li>
           <li class="dropdown">
@@ -43,8 +36,8 @@
 
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user == null}">
-          <li><a href="Login.jsp">Login</a></li>
-          <li><a href="SignUp.jsp">Signup</a></li>
+          <li><a href="login.jsp">Login</a></li>
+          <li><a href="signup.jsp">Signup</a></li>
         </c:if>
         
       </ul>
