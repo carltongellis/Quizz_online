@@ -12,12 +12,11 @@ import java.time.LocalDate;
 public class Course {
 	private int id;// added by C.Ellis
 	private String name;
-	private String description;
+	private String description = "";
 	private Quiz quiz;
 
-	public Course(String name, String description) {
+	public Course(String name) {
 		this.name = name;
-		this.description = description;
 	}
 
 	public String getName() {
