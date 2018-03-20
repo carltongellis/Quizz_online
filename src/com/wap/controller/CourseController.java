@@ -20,7 +20,7 @@ import com.wap.domain.Quiz;
  * @author vynguyen
  * @date 2018-03-19
  */
-@WebServlet(description = "Course Page", urlPatterns = { "/courseController" })
+@WebServlet(description = "Course Page", urlPatterns = { "/Course" })
 public class CourseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

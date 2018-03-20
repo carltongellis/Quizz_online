@@ -17,7 +17,7 @@ import com.wap.domain.Course;
 /**
  * Servlet implementation class ListCourseController
  */
-@WebServlet(description = "Show List Course Page", urlPatterns = { "/ListCourseController" })
+@WebServlet(description = "Show List Course Page", urlPatterns = { "/Courses" })
 public class ListCourseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

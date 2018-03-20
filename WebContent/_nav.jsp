@@ -23,7 +23,7 @@
         <li><a href="about.jsp">About Us</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
-          <li><a href="course.jsp">Courses</a></li>
+          <li><a href="Courses">Courses</a></li>
           <li><a href="#">History</a></li>
           <li><a href="profile.jsp">Profile</a></li>
           <li class="dropdown">
