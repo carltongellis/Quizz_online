@@ -82,48 +82,7 @@
     <!-- Container of web - Tan Tho Nguyen -->
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <div class="panel panel-info ">
-            <div class="panel-heading">
-              <h3 class="panel-title">Fundamental Programming</h3>
-            </div> 
-            <div class="panel-body"> This course provides a focused program for enhancing programming and analytical skills in five areas: problem-solving, data structures, object-oriented programming, the Java programming language, and the use of recursion in Java programs. These topics are of particular importance as a prerequisite for the courses in the graduate program in Computer Science. </div> 
-
-            <div class="panel-footer"> 
-              <button type="button" class="btn btn-primary">Get Strated</button>
-            </div> 
-          </div>
-        </div>   
-
-
-        <div class="col-md-4 col-sm-12">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Modern Programming</h3>
-            </div> 
-            <div class="panel-body"> This course presents the fundamental principles of object-oriented programming. Students will learn how to write reusable and better-maintained software, and integrate this knowledge with laboratory assignments and projects. Topics include: fundamental principles and models of object-oriented programming, UML class diagrams and design principles that promote re-usability and maintainability of software. </div> 
-
-            <div class="panel-footer"> 
-              <button type="button" class="btn btn-primary">Get Strated</button>
-            </div> 
-          </div>
-        </div>   
-
-
-        <div class="col-md-4 col-sm-12">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Web Application Programming</h3>
-            </div> 
-            <div class="panel-body"> This course provides a systematic introduction to programming interactive and dynamic web applications. The course is intended for individuals with little or no prior web application programming experience. This offering will use Java servlets and JSP for server side processing. The course will introduce HTML and CSS. JavaScript is a focus of the course, and is covered as a functional programming language including jQuery, Ajax, and JavaScript namespaces and modules.  </div> 
-
-            <div class="panel-footer"> 
-              <button type="button" class="btn btn-primary">Get Strated</button>
-            </div> 
-          </div>
-        </div>   
-
-
+        
       </div>
     </div>
   </body>
