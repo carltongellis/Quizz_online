@@ -9,6 +9,12 @@ import java.util.List;
 import com.wap.domain.User;
 import com.wap.utils.DBConnection;
 
+/**
+ * User Dao
+ * 
+ * @author Carlton Ellis
+ * @date 2018-03-19
+ */
 public class UserDao {
 	Connection con;
 
