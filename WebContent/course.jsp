@@ -14,7 +14,7 @@
         <ul class="bs-box clerfix">
           <c:forEach var="course" items="${listCourse}">
             <li class="col-md-4 col-sm-12 col-xs-12">
-              <a class="panel panel-default" href="courseController?bCourse=FPP">
+              <a class="panel panel-default" href="Course?bCourse=FPP">
                 <div class="panel-header text-center text-primary">
                   <h3>${course.name}</h3>
                 </div>

@@ -17,7 +17,7 @@ import com.wap.dao.UserDao;
 import com.wap.domain.User;
 
 /**
- * Servlet implementation class SignUp
+ * Servlet implementation class SignUp Controller
  * @author vynguyen
  * @date 2018-03-19
  */

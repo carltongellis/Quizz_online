@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.wap.domain.Course;
+import com.wap.domain.User;
 import com.wap.utils.DBConnection;
 
 /**
@@ -43,7 +44,8 @@ public class CourseDao {
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				Course course = new Course(rs.getString("name"), rs.getString("description"));
+				Course course = new Course(rs.getString("name"));
+				course.setDescription(rs.getString("description"));
 				course.setId(rs.getInt("id"));
 				return course;
 			}
@@ -52,7 +54,30 @@ public class CourseDao {
 		}
 		return null;
 	}
-
+	
+	/**
+	 * Function get course by course name
+	 * @author vynguyen
+	 * @date: 2018-03-20
+	 * */
+	public Course getCourseByCoursename(String courseName) {// retrieve a course from database based on coursename
+		try {
+			String qry = "Select * from course where name=?";
+			PreparedStatement pst = con.prepareStatement(qry);
+			pst.setString(1, courseName);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				Course course = new Course(rs.getString("name"));
+				course.setDescription(rs.getString("description"));
+				course.setId(rs.getInt("id"));
+				return course;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public List<Course> getCourseList() {// retrieve all Courses from database
 		try {
 			List<Course> courseList = new ArrayList<Course>();
@@ -60,7 +85,8 @@ public class CourseDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				Course course = new Course(rs.getString("name"), rs.getString("description"));
+				Course course = new Course(rs.getString("name"));
+				course.setDescription(rs.getString("description"));
 				course.setId(rs.getInt("id"));
 
 				courseList.add(course);

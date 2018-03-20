@@ -44,8 +44,8 @@ public class Course {
 	/**
 	 * This function is used for random creating quiz for each user
 	 */
-	public void createQuiz(LocalDate date) {
-		// this.quiz = new Quiz(date);
+	public void createQuiz(Integer userID, String date, String startTime) {
+		 this.quiz = new Quiz(userID, this.id, date, startTime);
 		// this.quiz.loadQuestion();
 	}
 
