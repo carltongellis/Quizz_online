@@ -69,7 +69,7 @@ public class Login extends HttpServlet {
 			// out.print("Sorry, username or password error!");
 			request.setAttribute("error",
 					"Your username or password was incorrect, enter correct credentials and try again!");
-			request.getRequestDispatcher("Login.jsp").forward(request, response);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 
 		/// session.invalidate();
