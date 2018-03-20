@@ -15,6 +15,7 @@ public class Question {
 	private String questionContent;
 	private int courseid; // added by C.Ellis
 	private List<QuestionOption> lstPossibleAnswer = new ArrayList<QuestionOption>();
+	private int selectedAnswer;
 
 	public Question(String questionContent, List<QuestionOption> lstPossibleAnswer) {
 		this.questionContent = questionContent;
@@ -56,6 +57,14 @@ public class Question {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setSelectedAnswer(int selectedAnswer) {
+		this.selectedAnswer = selectedAnswer;
+	}
+
+	public int getSlectedAnswer() {
+		return selectedAnswer;
 	}
 
 }
