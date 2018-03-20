@@ -26,7 +26,7 @@ public class CourseDao {
 
 	public void insertCourse(Course course) { // Save new course to database
 		try {
-			String qry = "insert into course(name, code) values(?,?)";
+			String qry = "insert into course(name, description) values(?,?)";
 			PreparedStatement pst = con.prepareStatement(qry);
 			pst.setString(1, course.getName());
 			pst.setString(2, course.getDescription());
@@ -43,7 +43,7 @@ public class CourseDao {
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				Course course = new Course(rs.getString("name"), rs.getString("code"));
+				Course course = new Course(rs.getString("name"), rs.getString("description"));
 				course.setId(rs.getInt("id"));
 				return course;
 			}
@@ -60,7 +60,7 @@ public class CourseDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				Course course = new Course(rs.getString("name"), rs.getString("code"));
+				Course course = new Course(rs.getString("name"), rs.getString("description"));
 				course.setId(rs.getInt("id"));
 
 				courseList.add(course);
