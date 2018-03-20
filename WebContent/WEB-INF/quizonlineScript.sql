@@ -62,7 +62,7 @@ CREATE TABLE `questionoption` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `questionid` int(11) DEFAULT NULL,
   `text` varchar(45) DEFAULT NULL,
-  `isAnswer` bit(1) DEFAULT NULL,
+  `isAnswer` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_idx` (`questionid`),
   CONSTRAINT `idq` FOREIGN KEY (`questionid`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION

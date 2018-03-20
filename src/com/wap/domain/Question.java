@@ -4,21 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-* The Question class
-*
-* @author  Vy Nguyen
-* @version 1.0
-* @since   2018-03-18 
-*/
+ * The Question class
+ *
+ * @author Vy Nguyen
+ * @version 1.0
+ * @since 2018-03-18
+ */
 public class Question {
+	private int id;// added by C.Ellis
 	private String questionContent;
-	private String bestAnswer;
-	private List<String> lstPossibleAnswer = new ArrayList<String>();
-	private String userAnswer = "";
-	
-	public Question(String questionContent, String bestAnswer, List<String> lstPossibleAnswer) {
+	private int courseid; // added by C.Ellis
+	private List<QuestionOption> lstPossibleAnswer = new ArrayList<QuestionOption>();
+
+	public Question(String questionContent, List<QuestionOption> lstPossibleAnswer) {
 		this.questionContent = questionContent;
-		this.bestAnswer = bestAnswer;
 		this.lstPossibleAnswer = lstPossibleAnswer;
 	}
 
@@ -30,32 +29,33 @@ public class Question {
 		this.questionContent = questionContent;
 	}
 
-	public String getBestAnswer() {
-		return bestAnswer;
-	}
-
-	public void setBestAnswer(String bestAnswer) {
-		this.bestAnswer = bestAnswer;
-	}
-
-	public List<String> getLstPossibleAnswer() {
+	public List<QuestionOption> getLstPossibleAnswer() {
 		return lstPossibleAnswer;
 	}
 
-	public void addPossibleAnswer(String possibleAnswer) {
+	public void addPossibleAnswer(QuestionOption possibleAnswer) {
 		this.lstPossibleAnswer.add(possibleAnswer);
 	}
-	
-	public void removePossibleAnswer(String possibleAnswer) {
+
+	public void removePossibleAnswer(QuestionOption possibleAnswer) {
 		int indexAn = this.lstPossibleAnswer.indexOf(possibleAnswer);
 		this.lstPossibleAnswer.remove(indexAn);
 	}
 
-	public String getUserAnswer() {
-		return userAnswer;
+	public int getCourseid() {
+		return courseid;
 	}
 
-	public void setUserAnswer(String userAnswer) {
-		this.userAnswer = userAnswer;
+	public void setCourseid(int courseid) {
+		this.courseid = courseid;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }
