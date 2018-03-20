@@ -1,4 +1,7 @@
 $(function(){
+  // Highlight current page navigation link - Tan Tho Nguyen
+  highlight();
+
   // Check AJAX call to display loading icon - Tan Tho Nguyen
   var loading = $('#loadbar').hide();
   $(document)
@@ -83,5 +86,24 @@ $(function(){
 
     e.preventDefault();
   });
+
+
+
+  // Highlight current page navigation link - Tan Tho Nguyen
+  function highlight() {
+    var url = window.location.href;
+    var activePage = url;
+    $('ul.nav a').each(function () {
+        var linkPage = this.href;
+
+        if (activePage == linkPage) {
+            $(this).closest("li").addClass("active");
+        }
+    });
+
+    if (activePage.indexOf(".jsp") < 0 || activePage.indexOf("index") >= 0) {
+      $("li.index").addClass("active");
+    }
+  }
 
 }); 
