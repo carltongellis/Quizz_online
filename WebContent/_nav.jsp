@@ -21,6 +21,7 @@
       <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/Quizz_online">Home</a></li>
         <li><a href="About.jsp">About Us</a></li>
+        <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
@@ -40,6 +41,7 @@
           </li>
         </c:if>
 
+        <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user == null}">
           <li><a href="Login.jsp">Login</a></li>
           <li><a href="SignUp.jsp">Signup</a></li>
@@ -48,6 +50,8 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-collapse -->
+
+  <!-- Loading icon - Tan Tho Nguyen -->
   <div id="loadbar" style="display: none;">
     <div class="blockG" id="rotateG_01"></div>
     <div class="blockG" id="rotateG_02"></div>
