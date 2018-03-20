@@ -39,15 +39,12 @@ public class Logout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		
-		request.getRequestDispatcher("index.jsp").include(request, response);
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		
-		out.print("successed");
-		out.close();
+
+		response.sendRedirect("index.jsp");
+
 	}
 
 	/**

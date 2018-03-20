@@ -6,7 +6,7 @@
   <%@include file='_head.html'%></td>
   <body>
     <!-- Include _nav.html file - Tan Tho Nguyen -->
-    <%@include file='_nav.html'%></td>
+    <%@include file='_nav.jsp'%></td>
       
       
       

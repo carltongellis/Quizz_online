@@ -5,8 +5,8 @@
 	<!-- Include _head.html file - Tan Tho Nguyen -->
   <%@include file='_head.html'%></td>
   <body>
-  	<!-- Include _nav.html file - Tan Tho Nguyen -->
-    <%@include file='_nav.html'%></td>
+  	<!-- Include _nav.jsp file - Tan Tho Nguyen -->
+    <%@include file='_nav.jsp'%></td>
 
 
     <div id="myCarousel" class="carousel slide margin-t70" data-interval="false">
