@@ -61,7 +61,7 @@ public class User {
 	 * This function is used for starting quiz after user choose the course
 	 */
 	public Quiz takeQuiz(Course course, LocalDate dateTaken) {
-		course.createQuiz(dateTaken);
+		// course.createQuiz(dateTaken);
 
 		// Add to map
 		this.mapQuizTaken.put(course.getName(), course.getQuiz());

@@ -72,7 +72,7 @@ public class CourseController extends HttpServlet {
 		
 		// Random questions
 		QuestionDao questionDao = new QuestionDao();
-		List<Question> lstQuestion = questionDao.getRandomQuizQuestionList(course.getId(), 3);
+		List<Question> lstQuestion = questionDao.getRandomQuizQuestionList(course.getId(), 10);
 		
 		// Send to UI
 		request.setAttribute("questions", lstQuestion);
