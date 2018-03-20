@@ -11,6 +11,14 @@
       
     <div class="container">
       <div class="row">
+      <table class="table">
+		<tr><th>CourseID</th><th>CourseName</th><th>Description</th></tr>
+		<c:forEach var="course" items="${listCourse}">
+			<tr>
+				<td>${course.id}</td><td>${course.name}</td><td>${course.description}</td>
+			</tr>
+		</c:forEach>
+	</table>
         <hr/>
         <ul class="bs-box clerfix">
             <li class="col-md-4 col-sm-12 col-xs-12">
