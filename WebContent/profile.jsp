@@ -20,7 +20,10 @@
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div> -->
         <h3>Personal info</h3>
-        <form class="form-horizontal" role="form" action="Profile" method="post">
+        <form id="formUpdateProfile" class="form-horizontal" role="form" action="Profile" method="post">
+          <div id="message" class="text-danger">
+              
+          </div>  
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
