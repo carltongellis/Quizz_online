@@ -20,10 +20,10 @@
       
       <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/Quizz_online">Home</a></li>
-        <li><a href="About.jsp">About Us</a></li>
+        <li><a href="about.jsp">About Us</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
-          <li><a href="courses.jsp">Courses</a></li>
+          <li><a href="course.jsp">Courses</a></li>
           <li><a href="#">History</a></li>
           <li><a href="#">Profile</a></li>
           <li class="dropdown">

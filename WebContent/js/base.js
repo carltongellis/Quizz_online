@@ -44,7 +44,7 @@ $(function(){
       } else {
         $("#message").removeClass("text-danger").addClass("text-primary");;
         $("#message").append("<li>Register successfull</li>");
-        window.location.href = "/Quizz_online/Login.jsp";
+        window.location.href = "/Quizz_online/login.jsp";
       }
       $("#message").append("</ul>");
     });
