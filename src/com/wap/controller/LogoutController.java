@@ -1,24 +1,28 @@
 package com.wap.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ShowProfile
+ * Servlet implementation class Logout
+ * @author vynguyen
+ * @date 2018-03-19
  */
-@WebServlet(description = "Show profile page", urlPatterns = { "/ShowProfile" })
-public class ShowProfile extends HttpServlet {
+@WebServlet(description = "Logout action", urlPatterns = { "/Logout" })
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowProfile() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +39,12 @@ public class ShowProfile extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+
+		response.sendRedirect("index.jsp");
 	}
 
 	/**

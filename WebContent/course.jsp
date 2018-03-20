@@ -14,84 +14,84 @@
         <hr/>
         <ul class="bs-box clerfix">
             <li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=FPP">
+                <a class="panel panel-default" href="courseController?bCourse=FPP">
                     <div class="panel-body text-center">
                         <h3>FPP</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=MPP">
+                <a class="panel panel-default" href="courseController?bCourse=MPP">
                     <div class="panel-body text-center">
                         <h3>MPP</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>
                     </div>
                 </a>
             </li><li class="col-md-4 col-sm-12 col-xs-12">
-                <a class="panel panel-default" href="controllerCourse?bCourse=A Basic Panel">
+                <a class="panel panel-default" href="courseController?bCourse=A Basic Panel">
                     <div class="panel-body text-center">
                         <h3>A Basic Panel</h3>
                         <p><button class="btn btn-primary">Click to start</button></p>

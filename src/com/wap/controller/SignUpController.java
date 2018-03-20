@@ -2,7 +2,6 @@ package com.wap.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.LinkedList;
 
 import javax.servlet.RequestDispatcher;
@@ -23,13 +22,13 @@ import com.wap.domain.User;
  * @date 2018-03-19
  */
 @WebServlet(description = "Sign Up Page", urlPatterns = { "/SignUp" })
-public class SignUp extends HttpServlet {
+public class SignUpController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignUp() {
+    public SignUpController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -110,7 +109,7 @@ public class SignUp extends HttpServlet {
 			userDao.insertUsert(new User(userName, userEmail, userPassword));
 			
 			// Go to Login page
-			RequestDispatcher rq =  request.getRequestDispatcher("Login.jsp");
+			RequestDispatcher rq =  request.getRequestDispatcher("login.jsp");
 			rq.forward(request, response);
 		}
 	}
