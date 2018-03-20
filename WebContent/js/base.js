@@ -1,4 +1,7 @@
 $(function(){
+  // Highlight current page navigation link - Tan Tho Nguyen
+  highlight();
+
   // Check AJAX call to display loading icon - Tan Tho Nguyen
   var loading = $('#loadbar').hide();
   $(document)
@@ -22,7 +25,7 @@ $(function(){
 
 
 
-  // Call AJAX to submit form - Tan Tho Nguyen
+  // Call AJAX to submit form Signup - Tan Tho Nguyen
   $("form#formSignup").submit(function(e) {
 
     $.ajax({
@@ -37,12 +40,12 @@ $(function(){
       $("#message").html("");
       $("#message").append("<ul>");
       if (data.result == "failed") {
-        $("#message").removeClass("text-primary").addClass("text-danger");;
+        $("#message").removeClass("alert alert-success").addClass("alert alert-danger");;
         for (var i = 0; i < data.message.length; i++) {
           $("#message").append("<li>" + data.message[i] + "</li>");
         }
       } else {
-        $("#message").removeClass("text-danger").addClass("text-primary");;
+        $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
         $("#message").append("<li>Register successfull</li>");
         window.location.href = "/Quizz_online/login.jsp";
       }
@@ -51,5 +54,56 @@ $(function(){
 
     e.preventDefault();
   });
+
+
+
+  // Call AJAX to submit form Update profile - Tan Tho Nguyen
+  $("form#formUpdateProfile").submit(function(e) {
+
+    $.ajax({
+      url: "Profile",
+      type: "POST",
+      data: {
+        userName: $("input[name=userName]").val(),
+        email: $("input[name=email]").val(),
+        newPassword: $("input[name=newPassword]").val(),
+        confirmNewPassword: $("input[name=confirmNewPassword]").val()
+      }
+    }).done(function (data) {
+      $("#message").html("");
+      $("#message").append("<ul>");
+      if (data.result == "failed") {
+        $("#message").removeClass("alert alert-success").addClass("alert alert-danger");;
+        for (var i = 0; i < data.message.length; i++) {
+          $("#message").append("<li>" + data.message[i] + "</li>");
+        }
+      } else {
+        $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
+        $("#message").append("<li>Update successfull</li>");
+      }
+      $("#message").append("</ul>");
+    });
+
+    e.preventDefault();
+  });
+
+
+
+  // Highlight current page navigation link - Tan Tho Nguyen
+  function highlight() {
+    var url = window.location.href;
+    var activePage = url;
+    $('ul.nav a').each(function () {
+        var linkPage = this.href;
+
+        if (activePage == linkPage) {
+            $(this).closest("li").addClass("active");
+        }
+    });
+
+    if (activePage.indexOf(".jsp") < 0 || activePage.indexOf("index") >= 0) {
+      $("li.index").addClass("active");
+    }
+  }
 
 }); 

@@ -17,9 +17,9 @@
         </div>
         <div class="main-content">
           <form action="Login" method="post">
-            <div class="text-danger">
+            <div id="message" class="text-danger">
               ${error}
-            </div>
+            </div>  
 
             <div class="input-group ">
               <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>

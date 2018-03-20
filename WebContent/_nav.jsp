@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/Quizz_online">Home</a></li>
+        <li class="index"><a href="/Quizz_online">Home</a></li>
         <li><a href="about.jsp">About Us</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
