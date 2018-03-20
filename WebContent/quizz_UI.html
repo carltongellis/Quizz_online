@@ -60,11 +60,13 @@
       <div class="container-fluid">
         <h2 class="text-primary">Servlet Quizz</h2>
         <div class="row">
-          <div class="col-xs-3 col-md-8 col-sm-12">
+          <div class="col-xs-3 col-md-8 col-sm-12 question_box">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="text-muted">
+                      <b>
                         Which of the following code is used to set content type of a page to be serviced using servlet?
+                      </b>
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -89,9 +91,50 @@
                 </div>
 
             </div>
-            <br/>
-            <button type="button" class="btn btn-secondary">Start again</button>  
-            <button type="button" class="btn btn-primary">Next</button>
+
+          </div>
+
+
+
+
+
+
+
+          <br/>
+
+
+
+          <div class="col-xs-3 col-md-8 col-sm-12 question_box">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text-muted">
+                      <b>
+                        Which of the following code is used to set content type of a page to be serviced using servlet?
+                      </b>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div id="loadbar" style="display: none;">
+                      <div class="blockG" id="rotateG_01"></div>
+                      <div class="blockG" id="rotateG_02"></div>
+                      <div class="blockG" id="rotateG_03"></div>
+                      <div class="blockG" id="rotateG_04"></div>
+                      <div class="blockG" id="rotateG_05"></div>
+                      <div class="blockG" id="rotateG_06"></div>
+                      <div class="blockG" id="rotateG_07"></div>
+                      <div class="blockG" id="rotateG_08"></div>
+                    </div>
+                    <div class="quiz" id="quiz" data-toggle="buttons">
+                       <label class="element-animation1 btn btn-lg btn-primary btn-block">
+                        <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">response.setContentType()
+                       </label>
+                       <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">request.setContentType()</label>
+                       <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">writer.setContentType()</label>
+                       <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">None of the above.</label>
+                   </div>
+                </div>
+
+            </div>
           </div>
         </div>
 
