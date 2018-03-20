@@ -21,13 +21,13 @@
           <img src="https://www.mum.edu/wp-content/themes/MUM/media/home/home_heart_large.jpg" style="width:100%" class="img-responsive">
           <div class="container">
             <div class="caraous-title">
-                <div class="col-md-12">
-                    <div class="col-md-6">
-                        <span>Non-Profit Organization</span>
+                <div class="col-md-7 col-xs-12 col-xl-12">
+                  
+                        <!-- <span>Non-Profit Organization</span> -->
                         <h1>Quizz online</h1>
                         <h3>At MUM, self-exploration isn't just an intellectual process. It's the discovery of your own innermost nature and your place in the world.</h3>
-                        <a class="btn btn-lg btn-primary site-btn" href="#">Get Started</a>
-                    </div>
+                        <a class="btn btn-lg btn-primary site-btn" href="ListCourseController">Get Started</a>
+                 
 
                 </div>
             
@@ -38,13 +38,13 @@
           <img src="https://www.mum.edu/wp-content/themes/MUM/media/home/home_blocksystem_large.jpg" class="img-responsive">
           <div class="container">
             <div class="caraous-title">
-                <div class="col-md-12">
-                    <div class="col-md-6">
-                        <span>Non-Profit Organization</span>
+                <div class="col-md-7 col-xs-12 col-xl-12">
+                    <!-- <div class="col-md-6"> -->
+                        <!-- <span>Non-Profit Organization</span> -->
                         <h1>Immersion in one course at a time</h1>
                         <h3>At MUM you're never juggling 4-5 classes, homework, and finals at once. Instead you're fully immersed in only one subject each month. </h3>
-                        <a class="btn btn-lg btn-primary site-btn" href="https://www.mum.edu/about-mum/one-full-time-course-per-month">Learn More</a>
-                    </div>
+                        <a class="btn btn-lg btn-primary site-btn" target="_blank" href="https://www.mum.edu/about-mum/one-full-time-course-per-month">Learn More</a>
+                    <!-- </div> -->
                    
                 </div>
             
@@ -55,13 +55,13 @@
           <img src="https://www.mum.edu/wp-content/themes/MUM/media/home/home_sl_large.jpg" class="img-responsive">
           <div class="container">
             <div class="caraous-title">
-                <div class="col-md-12">
-                    <div class="col-md-6">
-                        <span>Non-Profit Organization</span>
+                <div class="col-md-7 col-xs-12 col-xl-12">
+                    <!-- <div class="col-md-6"> -->
+                        <!-- <span>Non-Profit Organization</span> -->
                         <h1>Innovative sustainability</h1>
                         <h3>MUM is among America's most green colleges, and the first to offer degree programs in Sustainable Living and Regenerative Agriculture. </h3>
-                        <a class="btn btn-lg btn-primary site-btn" href="https://www.mum.edu">Learn More</a>
-                    </div>
+                        <a class="btn btn-lg btn-primary site-btn" target="_blank" href="https://www.mum.edu">Learn More</a>
+                    <!-- </div> -->
                 </div>
             
             </div>

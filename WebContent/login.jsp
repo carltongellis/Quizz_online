@@ -31,7 +31,7 @@
             </div>
             
             <div class="form-group ">
-                <input type="submit" class="btn btn-danger btn-lg btn-block login-button" value="Login" />
+                <input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Login" />
             </div>
           </form>
 
