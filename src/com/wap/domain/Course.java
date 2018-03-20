@@ -47,6 +47,6 @@ public class Course {
 	*/
 	public void createQuiz(LocalDate date) {
 		this.quiz = new Quiz(date);
-		this.quiz.loadQuestion();
+		//this.quiz.loadQuestion();
 	}
 }

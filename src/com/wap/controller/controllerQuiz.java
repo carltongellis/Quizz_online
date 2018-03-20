@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Quiz
  */
 @WebServlet(description = "Take quiz online page", urlPatterns = { "/Quiz" })
-public class Quiz extends HttpServlet {
+public class controllerQuiz extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Quiz() {
+    public controllerQuiz() {
         super();
         // TODO Auto-generated constructor stub
     }

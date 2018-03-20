@@ -75,9 +75,4 @@ public class User {
 	public Course chooseCourse(String courseName) {
 		return null;
 	}
-
-	public void setUsername(String username) {
-		this.username = username;
-
-	}
 }

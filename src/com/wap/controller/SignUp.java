@@ -102,6 +102,7 @@ public class SignUp extends HttpServlet {
 				
 			out.print(jsob);
 			out.flush();	
+			out.close();
 			
 		} else { // Pass case
 			// Create user
