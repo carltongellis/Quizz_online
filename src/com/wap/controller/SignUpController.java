@@ -53,6 +53,7 @@ public class SignUpController extends HttpServlet {
 		// Get parameters value
 		String userName = request.getParameter("userName");
 		String userPassword = request.getParameter("userPass");
+		String confirmPassword = request.getParameter("password");
 		String userEmail = request.getParameter("userEmail");
 		
 		// Regular expression
@@ -93,6 +94,11 @@ public class SignUpController extends HttpServlet {
 		
 		if (userPassword.length() < 6) {
 			failedMessage.add("User password is less than 6 charactors.");
+			isFailed = true;
+		}
+		
+		if (!userPassword.equals(confirmPassword)) {
+			failedMessage.add("User confirm password is different with password.");
 			isFailed = true;
 		}
 		
