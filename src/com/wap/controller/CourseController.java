@@ -78,6 +78,7 @@ public class CourseController extends HttpServlet {
 		String formatDateTime = date.format(formatter);
 		
 		// Send to UI
+		request.setAttribute("courseName", course.getName());
 		request.setAttribute("questions", lstQuestion);
 		request.setAttribute("date", formatDateTime);
 		request.setAttribute("startTime", startTime.toString());
