@@ -8,12 +8,10 @@
     <!-- Include _nav.jsp file - Tan Tho Nguyen -->
     <%@include file='_nav.jsp'%></td>
       
-      
-      
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
-        <h2 class="text-primary">Servlet Quizz</h2>
+        <h2 class="text-primary">${courseName} Quizz</h2>
         <div class="row">
           <div class="col-xs-12 col-md-8 col-sm-12 question_box">
             <form action="Result" id="formExam" method="POST">
@@ -22,7 +20,7 @@
               <input type="hidden" name="startTime" value="${startTime}">
               <input type="hidden" name="courseID" value="${courseID}">
             
-              <c:forEach var="question" items="${questions}">
+              <c:forEach var="question" items="${questions}" varStatus="loop">
               
 
                 <div class="col-xs-12 col-md-12 col-sm-12 question_box">
@@ -30,6 +28,8 @@
                       <div class="modal-header">
                           <h4 class="text-muted">
                             <b>
+                              ${loop.index + 1}
+                              .
                               ${question.questionContent}
                             </b>
                           </h4>
