@@ -2,8 +2,6 @@ package com.wap.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import java.util.Set;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -16,9 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.wap.dao.QuestionDao;
 import com.wap.dao.QuizDao;
-import com.wap.domain.QuestionOption;
 import com.wap.domain.Quiz;
 import com.wap.domain.User;
 
@@ -50,6 +46,7 @@ public class ResultController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// Generate printer writer
 		PrintWriter out = response.getWriter();
 		
 		// Init response text/html
@@ -60,39 +57,22 @@ public class ResultController extends HttpServlet {
 		String startTime = request.getParameter("startTime");
 		String courseID = request.getParameter("courseID");
 		String grade = request.getParameter("score");
-		//String answer = request.getParameter("answer");
+		String answer = request.getParameter("listQuestionAnswered");
 		Long timeEnd = System.nanoTime() / 1000000000 ;
 		Long timeStart = Long.valueOf(startTime) / 1000000000;
 		
-		// Convert to JSON object - is not used now
-		/*JSONParser parser = new JSONParser();
+		// Convert to JSON object
+		JSONParser parser = new JSONParser();
 		JSONObject jsonob = new JSONObject();
-		System.out.println("answer " + answer);
 		try {
 			jsonob = (JSONObject)parser.parse(answer);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 		
 		// Calculate total time
 		Long totalTime = timeEnd - timeStart;
-		
-		// Get list question from database - is not use now
-		/*QuestionDao qd = new QuestionDao();
-		Set<String> keys = jsonob.entrySet();
-		int grade = 0;
-		for (String key : keys) {
-			// Get list question possible with one of them is the corrected answer
-			List<QuestionOption> lstQuestionOption = qd.getQuestion(Integer.valueOf(key)).getLstPossibleAnswer();
-			for (QuestionOption qo : lstQuestionOption) {
-				if (qo.getIsAnswer() == 1 
-						&& qo.getText().equals((String)jsonob.get(key))) { // compare user answer with database
-					grade++;
-					break;
-				}
-			}
-		}*/
 		
 		// Create quiz and insert to database
 		User user = (User)request.getSession().getAttribute("user");
@@ -102,12 +82,20 @@ public class ResultController extends HttpServlet {
 		QuizDao quizDB = new QuizDao();
 		int quizID = quizDB.insertQuizDetails(q);
 		
+		// Insert quiz answer table
+		for (Object key : jsonob.keySet()) {
+			String newKey = (String)key;
+			Object keyValue = jsonob.get(newKey);
+			
+			System.out.println("key " + newKey + " value "  + keyValue);
+			quizDB.saveResults(quizID, Integer.valueOf(newKey.substring(4)), Integer.valueOf(keyValue.toString()));
+		}
+		
 		// Data send back to client
 		JSONObject dataResult = new JSONObject();
 		
 		dataResult.put("date", q.getDateTaken());
 		dataResult.put("time_duration", totalTime);
-		//dataResult.put("score", grade);
 		
 		out.print(dataResult);
 		out.flush();	
