@@ -116,12 +116,9 @@ $(function(){
       $(".result_box").fadeOut();
       $('#modalResult').modal();
 
-      $('#modalResult .score').html(score);
+      $('#modalResult .score').html(score + "/10");
       $('#modalResult .date').html(data.date);
-      $('#modalResult .duration').html(data.time_duration);
-
-      
-      
+      $('#modalResult .duration').html(data.time_duration > 60 ? (Math.round(data.time_duration / 60) + "minutes") : (data.time_duration + "seconds"));
       
     });
 
@@ -130,7 +127,7 @@ $(function(){
 
 
 
-  // Set up the timer
+  // Set up the timer - Tan Tho Nguyen
   $('#timer').timer({
     duration: '10m',
     callback: function() {
