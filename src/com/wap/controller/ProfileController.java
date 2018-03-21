@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
 
 import com.wap.dao.UserDao;
 import com.wap.domain.User;
+import com.wap.utils.Encrypt;
 
 /**
  * Servlet implementation class Controller show profile
@@ -101,7 +102,7 @@ public class ProfileController extends HttpServlet {
 			us.setfName(fName);
 			us.setlName(lName);
 			us.setEmail(userEmail);
-			us.setPassword(userNewPassword);
+			us.setPassword(Encrypt.HashPassword(userNewPassword));
 			
 			// Update user
 			ud.updateUser(us);

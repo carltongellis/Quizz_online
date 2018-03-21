@@ -71,7 +71,9 @@ $(function(){
         userName: $("input[name=userName]").val(),
         email: $("input[name=email]").val(),
         newPassword: $("input[name=newPassword]").val(),
-        confirmNewPassword: $("input[name=confirmNewPassword]").val()
+        confirmNewPassword: $("input[name=confirmNewPassword]").val(),
+        fName: $("input[name=fName]").val(),
+        lName: $("input[name=lName]").val()
       }
     }).done(function (data) {
       $("#message").html("");
