@@ -61,7 +61,17 @@
 	        </div>
 
           <div class="col-xs-12 col-md-4 col-sm-12 result_box">
-          	<input type="submit" class="btn btn-primary" value="Submit" form="formExam">
+
+            <div class="panel-header text-center text-primary">
+              <h2>Timmer</h2>
+            </div>
+            <div class="panel-body">
+              <h3 id="timmer" class="text-center text-danger"></h3>
+            </div>
+            <div class="panel-footer text-center">
+              <input type="submit" id="btnSubmitResult" class="btn btn-primary btn-lg btn-block" value="Submit" form="formExam">
+            </div>
+          	
           </div>
         </div>
 
@@ -70,6 +80,7 @@
 
     <!-- /#page-content-wrapper -->
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.6.5/timer.jquery.min.js" type="text/javascript"></script>
 </html>
 
 
