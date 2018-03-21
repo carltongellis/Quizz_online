@@ -91,29 +91,37 @@ $(function(){
 
 
   // Call AJAX to submit form Exam - Tan Tho Nguyen
-  $("form#formExam").submit(function(e) {
-    var json = {}
-    var i = 0;
+  // $("form#formExam").submit(function(e) {
+  //   var json = {}
+  //   var i = 0;
 
-    $("form#formExam label.active .value").each(function() {
-      json[$("form#formExam label.active input")[i].name + ""] = $( this ).text();
-      i++;
-    });
+  //   $("form#formExam label.active .value").each(function() {
+  //     json[$("form#formExam label.active input")[i].name + ""] = $( this ).text();
+  //     i++;
+  //   });
+
+  //   alert(1);
 
 
-    $.ajax({
-      url: "Result",
-      type: "POST",
-      data: {answer: json}
-    }).done(function (data) {
-      $('#timer').timer('remove');
-      $(".question_box").fadeOut();
-      $(".result_box").fadeOut();
-      $('#modalResult').modal();
-    });
+  //   $.ajax({
+  //     url: "Result",
+  //     type: "POST",
+  //     data: {
+  //       date: $("input[name=date]").val(),
+  //       startTime: $("input[name=startTime]").val(),
+  //       courseID: $("input[name=courseID]").val(),
+  //       answer: json
+  //     }
+  //   }).done(function (data) {
+  //     console.log(data);
+  //     $('#timer').timer('remove');
+  //     $(".question_box").fadeOut();
+  //     $(".result_box").fadeOut();
+  //     $('#modalResult').modal();
+  //   });
 
-    e.preventDefault();
-  });
+  //   e.preventDefault();
+  // });
 
 
 

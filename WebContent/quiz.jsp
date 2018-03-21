@@ -16,8 +16,11 @@
         <h2 class="text-primary">Servlet Quizz</h2>
         <div class="row">
         	<div class="col-xs-12 col-md-8 col-sm-12 question_box">
-	          <form id="formExam" method="GET">
+	          <form action="Result" id="formExam" method="POST">
 
+              <input type="hidden" name="date" value="${request.getAttribute('date')}">
+              <input type="hidden" name="startTime" value="${request.getAttribute('startTime')}">
+              <input type="hidden" name="courseID" value="${request.getAttribute('courseID')}">
 	          
 	            <c:forEach var="question" items="${questions}">
 	            
