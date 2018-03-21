@@ -13,6 +13,7 @@
       <div class="container-fluid">
         <h2 class="text-primary">${courseName} Quiz</h2>
         <div class="row">
+          <!-- Form answer - Tan Tho Nguyen -->
           <div class="col-xs-12 col-md-8 col-sm-12 question_box">
             <form action="Result" id="formExam" method="POST">
 
@@ -63,6 +64,7 @@
             </form>
           </div>
 
+          <!-- Timer on the right side - Tan Tho Nguyen -->
           <div class="col-xs-12 col-md-4 col-sm-12 result_box">
 
             <div class="panel-header text-center text-primary">
@@ -79,6 +81,7 @@
         </div>
 
 
+        <!-- The Modal to show result - Tan Tho Nguyen -->
         <div id="modalResult" class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
