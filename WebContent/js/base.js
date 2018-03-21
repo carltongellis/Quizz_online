@@ -11,19 +11,6 @@ $(function(){
     loading.hide();
   });
 
-  // $("label.btn").on('click',function () {
-  //   var choice = $(this).find('input:radio').val();
-  //   $('#loadbar').show();
-  //   $('#quiz').fadeOut();
-  //   setTimeout(function(){
-  //     $( "#answer" ).html(  $(this).checking(choice) );      
-  //     $('#quiz').show();
-  //     $('#loadbar').fadeOut();
-  //     /* something else */
-  //   }, 1500);
-  // });
-
-
 
   // Call AJAX to submit form Signup - Tan Tho Nguyen
   $("form#formSignup").submit(function(e) {
@@ -51,7 +38,7 @@ $(function(){
       } else {
         $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
         $("#message").append("<li>Register successfull</li>");
-        window.location.href = "/Quizz_online/login.jsp";
+        window.location.href = "Login";
       }
       $("#message").append("</ul>");
     });

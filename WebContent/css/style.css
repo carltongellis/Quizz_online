@@ -1,3 +1,5 @@
+/* CSS for whole website - Tan Tho Nguyen */
+
 #qid {
   padding: 10px 15px;
   -moz-border-radius: 50px;
@@ -497,8 +499,7 @@ background-color: #003b4d       ;
 
 
 
-
-/* Login page */
+/* CSS Login page - Tan Tho Nguyen */
 
 
 .main{
@@ -548,7 +549,11 @@ background-color: #003b4d       ;
 }
 
 
-/* Logo */
+
+
+
+
+/* CSS Logo - Tan Tho Nguyen */
 img.logo {
     height: 37px;
 }
@@ -563,10 +568,7 @@ img.logo {
 
 
 
-
-
-
-/* Courses List */
+/* CSS Courses List - Tan Tho Nguyen */
 
 ul.bs-box {
     display: -webkit-box;
@@ -612,9 +614,7 @@ ul.bs-box>li>a .panel-body {
 
 
 
-
-
-/* Exam page CSS */
+/* CSS Exam page - Tan Tho Nguyen */
 
 .question_box {
     padding-bottom: 20px;
