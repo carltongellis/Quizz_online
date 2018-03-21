@@ -1,7 +1,5 @@
 package com.wap.domain;
 
-import java.time.LocalDate;
-
 /**
  * The Course class
  *
@@ -37,16 +35,6 @@ public class Course {
 
 	public Quiz getQuiz() {
 		return quiz;
-	}
-
-	// --- Functions --- //
-
-	/**
-	 * This function is used for random creating quiz for each user
-	 */
-	public void createQuiz(Integer userID, String date, String startTime) {
-		 this.quiz = new Quiz(userID, this.id, date, startTime);
-		// this.quiz.loadQuestion();
 	}
 
 	public void setId(int id) {
