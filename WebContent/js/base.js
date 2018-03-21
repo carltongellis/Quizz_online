@@ -93,36 +93,33 @@ $(function(){
   // Call AJAX to submit form Exam - Tan Tho Nguyen
   $("form#formExam").submit(function(e) {
     var json = {}
+    var i = 0;
 
     $("form#formExam label.active .value").each(function() {
-      obj[''] = $( this ).text();
+      json[$("form#formExam label.active input")[i].name + ""] = $( this ).text();
+      i++;
     });
 
-    // $.ajax({
-    //   url: "Course",
-    //   type: "POST",
-    //   data: {
-    //     userName: $("input[name=userName]").val(),
-    //     email: $("input[name=email]").val(),
-    //     newPassword: $("input[name=newPassword]").val(),
-    //     confirmNewPassword: $("input[name=confirmNewPassword]").val()
-    //   }
-    // }).done(function (data) {
-    //   $("#message").html("");
-    //   $("#message").append("<ul>");
-    //   if (data.result == "failed") {
-    //     $("#message").removeClass("alert alert-success").addClass("alert alert-danger");;
-    //     for (var i = 0; i < data.message.length; i++) {
-    //       $("#message").append("<li>" + data.message[i] + "</li>");
-    //     }
-    //   } else {
-    //     $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
-    //     $("#message").append("<li>Update successfull</li>");
-    //   }
-    //   $("#message").append("</ul>");
-    // });
+
+    $.ajax({
+      url: "Result",
+      type: "POST",
+      data: {answer: json}
+    }).done(function (data) {
+      
+    });
 
     e.preventDefault();
+  });
+
+
+
+  // Set up the Timmer
+  $('#timmer').timer({
+    duration: '10m',
+    callback: function() {
+      $("#btnSubmitResult").click();
+    }
   });
 
 

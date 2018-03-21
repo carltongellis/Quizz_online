@@ -23,7 +23,8 @@ label.btn:hover {
     -o-transform: scale(1.1)
 }
 label.btn.active {
-    color: #28a745!important;
+    background-color: #28a745;
+    border-color: #28a745;
     font-weight: bold;
 }
 label.btn-block {
@@ -158,7 +159,7 @@ label .glyphicon {
     min-height: 205px
 }
 #loadbar {
-    position: absolute;
+    position: fixed;
     width: 62px;
     height: 77px;
     top: 0;
@@ -166,10 +167,11 @@ label .glyphicon {
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 9999999;
 }
 .blockG {
     position: absolute;
-    background-color: #FFF;
+    background-color: #dc3545;
     width: 10px;
     height: 24px;
     -moz-border-radius: 8px 8px 0 0;
@@ -317,50 +319,51 @@ label .glyphicon {
 }
 @-moz-keyframes fadeG {
     0% {
-        background-color: #000
+        background-color: #dc3545;
     }
 
     100% {
-        background-color: #FFF
+        background-color: #dc3545;
     }
 }
 
 @-webkit-keyframes fadeG {
     0% {
-        background-color: #000
+        background-color: #dc3545;
     }
 
     100% {
-        background-color: #FFF
+        background-color: #dc3545;
     }
 }
 
 @-ms-keyframes fadeG {
     0% {
-        background-color: #000
+        background-color: #dc3545;
     }
 
     100% {
-        background-color: #FFF
+        background-color: #dc3545;
     }
 }
 
 @-o-keyframes fadeG {
     0% {
-        background-color: #000
+        background-color: #dc3545;
     }
+
     100% {
-        background-color: #FFF
+        background-color: #dc3545;
     }
 }
 
 @keyframes fadeG {
     0% {
-        background-color: #000
+        background-color: #dc3545;
     }
 
     100% {
-        background-color: #FFF
+        background-color: #dc3545;
     }
 }
 
@@ -485,6 +488,11 @@ background-color: #003b4d       ;
     color: #d21300;
     background-color: #ffffff;
   }
+
+
+  .result_box {
+    position: static !important;
+  }
 }
 
 
@@ -606,9 +614,13 @@ ul.bs-box>li>a .panel-body {
 
 
 
-/* Question CSS */
+/* Exam page CSS */
 
 .question_box {
     padding-bottom: 20px;
 }
 
+.result_box {
+    position: fixed;
+    right: 0;
+}
