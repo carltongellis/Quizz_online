@@ -55,12 +55,12 @@ public class CourseController extends HttpServlet {
 		//response.setContentType("application/json");
 		
 		// Get parameter
-		String buttonCourse = request.getParameter("bCourse");
-		request.setAttribute("courseName", buttonCourse);
+		String buttonCourseID = request.getParameter("bCourse");
+		//request.setAttribute("courseName", buttonCourse);
 		
 		// Get course from database
 		CourseDao cd = new CourseDao();
-		Course course = cd.getCourseByCoursename(buttonCourse);
+		Course course = cd.getCourse(Integer.valueOf(buttonCourseID));
 		
 		// Create quiz
 		Long startTime = System.nanoTime() / 1000000000;
