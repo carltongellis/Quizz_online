@@ -27,7 +27,7 @@
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
           <li><a href="History">History</a></li>
-          <li><a href="profile.jsp">Profile</a></li>
+          <li><a href="Profile">Profile</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi ${user.getUsername()} <b class="caret"></b></a>
             <ul class="dropdown-menu">
