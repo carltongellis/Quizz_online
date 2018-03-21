@@ -31,6 +31,18 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-md-3 control-label">First name:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="${user.getfName()}" type="text" name="fName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Last name:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="${user.getlName()}" type="text" name="lName">
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-md-3 control-label">Email:</label>
             <div class="col-md-8">
               <input class="form-control" value="${user.getEmail()}" type="text" name="email">
