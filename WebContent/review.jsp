@@ -64,6 +64,19 @@
             </form>
           </div>
 
+          <!-- Notice on the right side - Tan Tho Nguyen -->
+          <div class="col-xs-12 col-md-4 col-sm-12 result_box">
+
+            <div class="panel-header text-center text-primary">
+              <h2>Notice</h2>
+            </div>
+            <div class="panel-body">
+              <input type="button" class="btn btn-success"> Correct answer
+              <input type="button" class="btn btn-danger"> Your wrong answer
+            </div>
+            
+          </div>
+        </div>
         </div>
 
 
