@@ -55,7 +55,7 @@ public class QuizDao {
 		return quizId;
 	}
 
-	public Quiz getQuizAnswers(int quizId) {// retrieve quiz details and answers for a user from database based on quiz
+	public Quiz getQuizWithAnswer(int quizId) {// retrieve quiz details and answers for a user from database based on quiz
 											// id
 		QuestionDao questionDao = new QuestionDao();
 		List<Question> lstQues = new ArrayList<Question>();

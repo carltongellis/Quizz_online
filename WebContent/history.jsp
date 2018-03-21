@@ -31,6 +31,7 @@
                     <td>${quiz.getScore() >= 8 ? "Passed" : "Failed"}</td>
                     <td>
                       <a href="Course?bCourse=${course.key.getId()}" class="">Retake</a>
+                      <a href="Review?quizID=${quiz.getId()}" class="text-success">Review</a>
                     </td>
                   </tr>
                 

@@ -44,7 +44,7 @@ public class ReviewController extends HttpServlet {
 		
 		// Load from database
 		QuizDao qd = new QuizDao();
-		Quiz q = qd.getQuizTakenById(Integer.valueOf(quizID));
+		Quiz q = qd.getQuizWithAnswer(Integer.valueOf(quizID));
 		
 		request.setAttribute("questions", q.getLstQuestions());
 		

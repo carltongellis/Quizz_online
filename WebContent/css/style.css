@@ -24,6 +24,16 @@ label.btn:hover {
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1)
 }
+label.btn.answered {
+    background-color: #a94442;
+    border-color: #a94442;
+    font-weight: bold;
+}
+label.btn.correctAnswer {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: bold;
+}
 label.btn.active {
     background-color: #28a745;
     border-color: #28a745;
@@ -618,6 +628,10 @@ ul.bs-box>li>a .panel-body {
 
 .question_box {
     padding-bottom: 20px;
+}
+
+.question_box.review {
+    pointer-events: none;
 }
 
 .result_box {
