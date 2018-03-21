@@ -1,6 +1,5 @@
 package com.wap.domain;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 
 /**
@@ -77,26 +76,5 @@ public class User {
 
 	public void addQuizTaken(String courseName, Quiz quiz) {
 		this.mapQuizTaken.put(courseName, quiz);
-	}
-
-	// --- Functions --- //
-
-	/**
-	 * This function is used for starting quiz after user choose the course
-	 */
-	public Quiz takeQuiz(Course course, LocalDate dateTaken) {
-		// course.createQuiz(dateTaken);
-
-		// Add to map
-		this.mapQuizTaken.put(course.getName(), course.getQuiz());
-
-		return course.getQuiz();
-	}
-
-	/**
-	 * This function is used for choosing the course testing
-	 */
-	public Course chooseCourse(String courseName) {
-		return null;
 	}
 }
