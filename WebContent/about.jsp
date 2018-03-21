@@ -12,6 +12,7 @@
       
     <div class="container">
       <div class="row">
+      <!-- Show Professor and all team members - Tan Tho Nguyen -->
 
         <div class="col-sm-12 col-md-12">
           <div class="thumbnail member">

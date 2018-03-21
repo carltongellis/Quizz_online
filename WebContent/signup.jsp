@@ -12,6 +12,7 @@
       
     <div class="container">
       <div class="row main">
+        <!-- Form sign up - Tan Tho Nguyen -->
         <div class="form-header">
           <h1 class="text-center ">Signup form </h1>
         </div>

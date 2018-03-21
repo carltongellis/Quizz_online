@@ -13,6 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xl-12">
+          <!-- Show table history - Tan Tho Nguyen -->
           <c:forEach var="course" items="${mapCourseQuiz}">
             <c:if test="${!course.value.isEmpty()}">
               <h3>${course.key.getName()}</h3>

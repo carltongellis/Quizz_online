@@ -12,13 +12,9 @@
       
     <div class="container">
       <div class="row">
-    <!-- edit form column -->
+      <!-- edit form column -->
       <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-        <!-- <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div> -->
+        <!-- Form view and update profile - Tan Tho Nguyen -->
         <h3>Personal info</h3>
         <form id="formUpdateProfile" class="form-horizontal" role="form" action="Profile" method="post">
           <div id="message" class="text-danger">

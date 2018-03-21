@@ -12,6 +12,7 @@
     <div class="container">
       <div class="row">
         <ul class="bs-box clerfix">
+          <!-- Show all courses - Tan Tho Nguyen -->
           <c:forEach var="course" items="${listCourse}">
             <li class="col-md-4 col-sm-12 col-xs-12">
               <a class="panel panel-default" href="Course?bCourse=${course.id}">

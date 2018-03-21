@@ -16,6 +16,7 @@
           <h1 class="text-center ">Login form </h1>
         </div>
         <div class="main-content">
+          <!-- Form Login - Tan Tho Nguyen -->
           <form action="Login" method="post">
             <div id="message" class="text-danger">
               ${error}
