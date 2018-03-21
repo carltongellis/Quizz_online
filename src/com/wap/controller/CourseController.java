@@ -1,7 +1,6 @@
 package com.wap.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -20,7 +19,7 @@ import com.wap.domain.Course;
 import com.wap.domain.Question;
 
 /**
- * Servlet implementation class Course
+ * Servlet implementation class Course controller
  * @author vynguyen
  * @date 2018-03-19
  */

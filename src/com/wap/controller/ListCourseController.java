@@ -15,7 +15,9 @@ import com.wap.dao.CourseDao;
 import com.wap.domain.Course;
 
 /**
- * Servlet implementation class ListCourseController
+ * Servlet implementation list course controller class 
+ * @author vynguyen
+ * @date 2018-03-19
  */
 @WebServlet(description = "Show List Course Page", urlPatterns = { "/Courses" })
 public class ListCourseController extends HttpServlet {

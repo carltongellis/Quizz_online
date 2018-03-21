@@ -19,7 +19,9 @@ import com.wap.domain.Quiz;
 import com.wap.domain.User;
 
 /**
- * Servlet implementation class Result
+ * Servlet implementation class Result controller
+ * @author vynguyen
+ * @date 2018-03-19
  */
 @WebServlet(description = "Result after quiz page", urlPatterns = { "/Result" })
 public class ResultController extends HttpServlet {
