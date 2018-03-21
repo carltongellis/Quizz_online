@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
 
 import com.wap.dao.UserDao;
 import com.wap.domain.User;
+import com.wap.utils.Encrypt;
 
 /**
  * Servlet implementation class SignUp Controller
@@ -145,7 +146,7 @@ public class SignUpController extends HttpServlet {
 			
 		} else { // Pass case
 			// Create user
-			userDao.insertUsert(new User(userName, fName, lName, userEmail, userPassword));
+			userDao.insertUsert(new User(userName, fName, lName, userEmail, Encrypt.HashPassword(userPassword)));
 			
 			// Go to Login page
 			RequestDispatcher rq =  request.getRequestDispatcher("login.jsp");

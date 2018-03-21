@@ -25,13 +25,13 @@ public class UserDao {
 
 	public void insertUsert(User user) { // Save new user to database
 		try {
-			String qry = "insert into user(fname, lname, username, email, password) values(?,?,?)";
+			String qry = "insert into user(fname, lname, username, password, email) values(?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(qry);
 			pst.setString(1, user.getfName()); // Add by vynguyen
 			pst.setString(2, user.getlName()); // Add by vynguyen
 			pst.setString(3, user.getUsername());
-			pst.setString(4, user.getEmail());
-			pst.setString(5, user.getPassword());
+			pst.setString(4, user.getPassword());
+			pst.setString(5, user.getEmail());
 			pst.execute();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import com.wap.dao.UserDao;
 import com.wap.domain.User;
+import com.wap.utils.Encrypt;
 
 /**
  * Servlet implementation class Login Controller
@@ -56,7 +57,7 @@ public class LoginController extends HttpServlet {
 		User user = userDao.getUserByUsername(request.getParameter("username"));
 
 		// validate user
-		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
+		if (user != null && user.getPassword().equals(Encrypt.HashPassword(request.getParameter("password")))) {
 			session = request.getSession(true);
 			session.setAttribute("user", user);
 			session.setMaxInactiveInterval(86400); // 2 days
