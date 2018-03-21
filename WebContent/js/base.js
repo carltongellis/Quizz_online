@@ -11,19 +11,6 @@ $(function(){
     loading.hide();
   });
 
-  // $("label.btn").on('click',function () {
-  //   var choice = $(this).find('input:radio').val();
-  //   $('#loadbar').show();
-  //   $('#quiz').fadeOut();
-  //   setTimeout(function(){
-  //     $( "#answer" ).html(  $(this).checking(choice) );      
-  //     $('#quiz').show();
-  //     $('#loadbar').fadeOut();
-  //     /* something else */
-  //   }, 1500);
-  // });
-
-
 
   // Call AJAX to submit form Signup - Tan Tho Nguyen
   $("form#formSignup").submit(function(e) {

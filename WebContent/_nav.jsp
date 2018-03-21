@@ -13,6 +13,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/Quizz_online/index.jsp">
+        <!-- I use custom tag here - Tan Tho Nguyen -->
       	<ct:ct_img alt="logo" src="img/logo.png" className="logo"/>
       </a>
     </div>
