@@ -155,7 +155,7 @@ label .glyphicon {
     color: inherit
 }
 
-.modal-body {
+.modal-body.answers {
     min-height: 205px
 }
 #loadbar {

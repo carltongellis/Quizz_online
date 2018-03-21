@@ -106,7 +106,10 @@ $(function(){
       type: "POST",
       data: {answer: json}
     }).done(function (data) {
-      
+      $('#timer').timer('remove');
+      $(".question_box").fadeOut();
+      $(".result_box").fadeOut();
+      $('#modalResult').modal();
     });
 
     e.preventDefault();
@@ -114,8 +117,8 @@ $(function(){
 
 
 
-  // Set up the Timmer
-  $('#timmer').timer({
+  // Set up the timer
+  $('#timer').timer({
     duration: '10m',
     callback: function() {
       $("#btnSubmitResult").click();

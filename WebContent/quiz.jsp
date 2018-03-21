@@ -31,7 +31,7 @@
 	                          </b>
 	                        </h4>
 	                    </div>
-	                    <div class="modal-body">
+	                    <div class="modal-body answers">
 	                        <div id="loadbar" style="display: none;">
 	                          <div class="blockG" id="rotateG_01"></div>
 	                          <div class="blockG" id="rotateG_02"></div>
@@ -63,15 +63,33 @@
           <div class="col-xs-12 col-md-4 col-sm-12 result_box">
 
             <div class="panel-header text-center text-primary">
-              <h2>Timmer</h2>
+              <h2>Timer</h2>
             </div>
             <div class="panel-body">
-              <h3 id="timmer" class="text-center text-danger"></h3>
+              <h3 id="timer" class="text-center text-danger"></h3>
             </div>
             <div class="panel-footer text-center">
               <input type="submit" id="btnSubmitResult" class="btn btn-primary btn-lg btn-block" value="Submit" form="formExam">
             </div>
           	
+          </div>
+        </div>
+
+
+        <div id="modalResult" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-primary">Result</h2>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Select course</button>
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              </div>
+            </div>
           </div>
         </div>
 
