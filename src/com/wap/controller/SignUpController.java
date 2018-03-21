@@ -126,12 +126,12 @@ public class SignUpController extends HttpServlet {
 			allEmails.add(u.getEmail());
 		}
 		
-		if (!allUserName.contains(userName)) {
+		if (allUserName.contains(userName)) {
 			failedMessage.add("User name is exists.");
 			isFailed = true;
 		}
 		
-		if (!allEmails.contains(userEmail)) {
+		if (allEmails.contains(userEmail)) {
 			failedMessage.add("User email is exists.");
 			isFailed = true;
 		}
