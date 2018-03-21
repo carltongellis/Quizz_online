@@ -63,9 +63,13 @@ public class ResultController extends HttpServlet {
 		Long timeEnd = System.nanoTime() / 1000000000 ;
 		Long timeStart = Long.valueOf(startTime) / 1000000000;
 		
+		System.out.println("start time " + timeStart);
+		System.out.println("end time " + timeEnd);
+		
 		// Convert to JSON object
 		JSONParser parser = new JSONParser();
 		JSONObject jsonob = new JSONObject();
+		System.out.println("answer " + answer);
 		try {
 			jsonob = (JSONObject)parser.parse(answer);
 		} catch (ParseException e) {
@@ -94,7 +98,7 @@ public class ResultController extends HttpServlet {
 		
 		// Create quiz and insert to database
 		User user = (User)request.getSession().getAttribute("user");
-		Quiz q = new Quiz(user.getId(), Integer.valueOf(courseID), date, startTime);
+		Quiz q = new Quiz(user.getId(), Integer.valueOf(courseID), date, timeStart.toString());
 		q.setTimeEnd(timeEnd.toString());
 		q.setScore(grade);
 		QuizDao quizDB = new QuizDao();

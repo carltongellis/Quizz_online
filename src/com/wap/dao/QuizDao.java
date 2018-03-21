@@ -34,8 +34,8 @@ public class QuizDao {
 			PreparedStatement pst = con.prepareStatement(qry, Statement.RETURN_GENERATED_KEYS);
 			pst.setInt(1, quiz.getUserid());
 			pst.setInt(2, quiz.getCourseid());
-			pst.setString(3, quiz.getDateTaken().toString());
-			pst.setString(4, quiz.getTimeStart().toString());
+			pst.setString(3, quiz.getDateTaken());
+			pst.setString(4, quiz.getTimeStart());
 			pst.setString(5, quiz.getTimeEnd());
 			pst.setFloat(6, quiz.getScore());
 			pst.execute();
