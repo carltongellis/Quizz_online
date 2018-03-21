@@ -46,6 +46,14 @@ public class ProfileController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		// Check user login or not
+		User user = (User)request.getSession().getAttribute("user"); 
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+				
 		PrintWriter out = response.getWriter();
 		
 		// Init response text/html

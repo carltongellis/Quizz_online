@@ -48,6 +48,13 @@ public class ResultController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// Check user login or not
+		User user = (User)request.getSession().getAttribute("user"); 
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+				
 		// Generate printer writer
 		PrintWriter out = response.getWriter();
 		
@@ -77,7 +84,6 @@ public class ResultController extends HttpServlet {
 		Long totalTime = timeEnd - timeStart;
 		
 		// Create quiz and insert to database
-		User user = (User)request.getSession().getAttribute("user");
 		Quiz q = new Quiz(user.getId(), Integer.valueOf(courseID), date, timeStart.toString());
 		q.setTimeEnd(timeEnd.toString());
 		q.setScore(Float.valueOf(grade));

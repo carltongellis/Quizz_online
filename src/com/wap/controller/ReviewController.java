@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.wap.dao.QuizDao;
 import com.wap.domain.Quiz;
+import com.wap.domain.User;
 
 /**
  * Servlet implementation class Review
@@ -37,8 +38,13 @@ public class ReviewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
-
+		// Check user login or not
+		User user = (User)request.getSession().getAttribute("user"); 
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+		
 		// Get parameter
 		String quizID = request.getParameter("quizID");
 		

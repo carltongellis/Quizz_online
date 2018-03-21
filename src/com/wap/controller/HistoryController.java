@@ -51,6 +51,11 @@ public class HistoryController extends HttpServlet {
 		
 		// Load quiz from database
 		User user = (User)request.getSession().getAttribute("user");
+		// Check user login or not		
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
 		
 		// Load list course from database
 		CourseDao cd = new CourseDao();

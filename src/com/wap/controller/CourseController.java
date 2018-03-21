@@ -17,6 +17,7 @@ import com.wap.dao.CourseDao;
 import com.wap.dao.QuestionDao;
 import com.wap.domain.Course;
 import com.wap.domain.Question;
+import com.wap.domain.User;
 
 /**
  * Servlet implementation class Course controller
@@ -47,6 +48,13 @@ public class CourseController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		// Check user login or not
+		User user = (User)request.getSession().getAttribute("user"); 
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
 		
 		// Get parameter
 		String buttonCourseID = request.getParameter("bCourse");
