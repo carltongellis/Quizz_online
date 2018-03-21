@@ -46,7 +46,7 @@ public class ReviewController extends HttpServlet {
 		QuizDao qd = new QuizDao();
 		Quiz q = qd.getQuizTakenById(Integer.valueOf(quizID));
 		
-		request.setAttribute("quizTaken", q);
+		request.setAttribute("questions", q.getLstQuestions());
 		
 		RequestDispatcher rq = request.getRequestDispatcher("review.jsp");
 		rq.forward(request, response);
