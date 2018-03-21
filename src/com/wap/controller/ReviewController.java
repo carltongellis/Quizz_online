@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,20 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.wap.dao.QuestionDao;
+import com.wap.dao.QuizDao;
 import com.wap.domain.Question;
 import com.wap.domain.QuestionOption;
+import com.wap.domain.Quiz;
 
 /**
  * Servlet implementation class QuizController
  */
-@WebServlet("/TakeQuiz")
-public class QuizController extends HttpServlet {
+@WebServlet(description = "Review Page", urlPatterns = { "/Review" })
+public class ReviewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public QuizController() {
+	public ReviewController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,20 +42,17 @@ public class QuizController extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		QuestionDao questionDao = new QuestionDao();
-		List<Question> questions = questionDao.getRandomQuizQuestionList(1);
-
-		StringBuffer sb = new StringBuffer();
-		for (Question question : questions) {
-			sb.append("<p>" + question.getQuestionContent() + "</p><ol style='list-stype-type: 'lower-latin';'>");
-			for (QuestionOption questionOption : question.getLstPossibleAnswer()) {
-				sb.append("<li>" + questionOption.getText() + "</li>");
-			}
-			sb.append("</ol>");
-		}
-
-		PrintWriter out = response.getWriter();
-		out.print(sb);
+		// Get parameter
+		String quizID = request.getParameter("quizID");
+		
+		// Load from database
+		QuizDao qd = new QuizDao();
+		Quiz q = qd.getQuizTakenById(Integer.valueOf(quizID));
+		
+		request.setAttribute("quizTaken", q);
+		
+		RequestDispatcher rq = request.getRequestDispatcher("review.jsp");
+		rq.forward(request, response);
 	}
 
 	/**
