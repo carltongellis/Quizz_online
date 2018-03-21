@@ -48,7 +48,7 @@
 	                        <div class="quiz" id="quiz" data-toggle="buttons">
 	                          <c:forEach var="pAnswer" items="${question.lstPossibleAnswer}">
 	                            <label class="element-animation1 btn btn-lg btn-primary btn-block">
-	                              <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="qid_${question.id}" class="answer">
+	                              <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="qid_${question.id}" class="answer" value="${pAnswer.isAnswer}">
 	                              <span class="value">${pAnswer.text}</span>
 	                            </label>
 	                          </c:forEach>
@@ -86,11 +86,22 @@
                 <h2 class="modal-title text-primary">Result</h2>
               </div>
               <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <table class="table">
+                  <tr>
+                    <td class="text-primary">Score</td>
+                    <td class="text-primary">Duration</td>
+                    <td class="text-primary">Date</td>
+                  </tr>
+                  <tr>
+                    <td><h3 class="score text-danger"></h3></td>
+                    <td><h3 class="duration text-danger"></h3></td>
+                    <td><h3 class="date text-danger"></h3></td>
+                  </tr>
+                </table>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Select course</button>
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <a href='#' onclick='location.reload(true); return false;' class="btn btn-default">Retake</a>
+                <a href="Courses" class="btn btn-primary">List courses</a>
               </div>
             </div>
           </div>

@@ -92,19 +92,14 @@ $(function(){
 
   // Call AJAX to submit form Exam - Tan Tho Nguyen
   $("form#formExam").submit(function(e) {
-    var answer = "{"
-    var i = 0;
+    var score = 0;
 
-    $("form#formExam label.active .value").each(function() {
-      answer += $("form#formExam label.active input")[i].name;
-      answer += ": "
-      answer += $( this ).text();
-      answer += ", "
-      i++;
+    $("form#formExam label.active input").each(function() {
+      if ($(this).val() == "1") {
+        score++
+      }
     });
 
-    answer += "}";
-    console.log(answer);
 
     $.ajax({
       url: "Result",
@@ -113,14 +108,21 @@ $(function(){
         date: $("input[name=date]").val(),
         startTime: $("input[name=startTime]").val(),
         courseID: $("input[name=courseID]").val(),
-        answer: answer
+        score: score
       }
     }).done(function (data) {
-      console.log(data);
       $('#timer').timer('remove');
       $(".question_box").fadeOut();
       $(".result_box").fadeOut();
       $('#modalResult').modal();
+
+      $('#modalResult .score').html(score);
+      $('#modalResult .date').html(data.date);
+      $('#modalResult .duration').html(data.time_duration);
+
+      
+      
+      
     });
 
     e.preventDefault();
