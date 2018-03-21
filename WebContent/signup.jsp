@@ -27,6 +27,16 @@
               </div>
 
               <div class="input-group ">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                <input id="fName" type="text" class="form-control" name="fName" placeholder="First name">
+              </div>
+
+              <div class="input-group ">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                <input id="lName" type="text" class="form-control" name="lName" placeholder="Last name">
+              </div>
+
+              <div class="input-group ">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                 <input id="userEmail" type="text" class="form-control" name="userEmail" placeholder="Email">
               </div>
@@ -34,7 +44,7 @@
 
               <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                <input id="userPass" type="userPass" class="form-control" name="userPass" placeholder="Password">
+                <input id="userPass" type="password" class="form-control" name="userPass" placeholder="Password">
               </div>
 
 

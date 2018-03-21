@@ -34,7 +34,11 @@ $(function(){
       data: {
         userName: $("#userName").val(),
         userEmail: $("#userEmail").val(),
-        userPass: $("#userPass").val()
+        userPass: $("#userPass").val(),
+        password: $("#password").val(),
+        fName: $("#fName").val(),
+        lName: $("#lName").val()
+
       }
     }).done(function (data) {
       $("#message").html("");
@@ -118,21 +122,11 @@ $(function(){
 
       $('#modalResult .score').html(score + "/10");
       $('#modalResult .date').html(data.date);
-      $('#modalResult .duration').html(data.time_duration > 60 ? (Math.round(data.time_duration / 60) + "minutes") : (data.time_duration + "seconds"));
+      $('#modalResult .duration').html(data.time_duration > 60 ? (Math.round(data.time_duration / 60) + "min") : (data.time_duration + "sec"));
       
     });
 
     e.preventDefault();
-  });
-
-
-
-  // Set up the timer - Tan Tho Nguyen
-  $('#timer').timer({
-    duration: '10m',
-    callback: function() {
-      $("#btnSubmitResult").click();
-    }
   });
 
 
