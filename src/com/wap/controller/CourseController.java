@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.wap.dao.CourseDao;
 import com.wap.dao.QuestionDao;
+import com.wap.dao.QuizDao;
 import com.wap.domain.Course;
 import com.wap.domain.Question;
 import com.wap.domain.Quiz;
@@ -56,19 +57,13 @@ public class CourseController extends HttpServlet {
 		
 		// Get parameter
 		String buttonCourseID = request.getParameter("bCourse");
-		//request.setAttribute("courseName", buttonCourse);
 		
 		// Get course from database
 		CourseDao cd = new CourseDao();
 		Course course = cd.getCourse(Integer.valueOf(buttonCourseID));
 		
-		// Create quiz
-		Long startTime = System.nanoTime() / 1000000000;
-		User user = (User)request.getSession().getAttribute("user");
-		System.out.println("user id" + user.getId());
-		course.createQuiz(user.getId(), LocalDate.now().toString(), startTime.toString());
-		
-		Quiz q = course.getQuiz();
+		// Init start time
+		Long startTime = System.nanoTime();
 		
 		// Random questions
 		QuestionDao questionDao = new QuestionDao();
@@ -76,18 +71,13 @@ public class CourseController extends HttpServlet {
 		
 		// Send to UI
 		request.setAttribute("questions", lstQuestion);
-		
-		// Convert quiz to JSON object
-		// set json object to request attribute
+		request.setAttribute("date", LocalDate.now().toString());
+		request.setAttribute("startTime", startTime.toString());
+		request.setAttribute("courseID", buttonCourseID);
 		
 		// Go to Quiz page
 		RequestDispatcher rq =  request.getRequestDispatcher("quiz.jsp");
 		rq.forward(request, response);
-		
-		// Send JSON object
-		//out.print("Take" + buttonCourse + "quiz");
-		//out.flush();
-		//out.close();
 	}
 
 	/**

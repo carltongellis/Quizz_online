@@ -21,11 +21,13 @@ public class QuizDao {
 
 	Connection con;
 
-	QuizDao() {
+	public QuizDao() {
 		con = DBConnection.getConnection();
 	}
 
-	public void insertQuizDetails(Quiz quiz) { // Save quiz record and quiz answers to database
+	public int insertQuizDetails(Quiz quiz) { // Save quiz record and quiz answers to database
+		
+		int quizId = 0;
 		try {
 			// insert quiz record
 			String qry = "insert into quiz(userid, courseid, date, timestart, timeend, score) values(?,?,?,?,?,?)";
@@ -39,7 +41,6 @@ public class QuizDao {
 			pst.execute();
 
 			ResultSet rs = pst.getGeneratedKeys();
-			int quizId = 0;
 			if (rs.next()) {
 				quizId = rs.getInt(1);
 			}
@@ -55,10 +56,11 @@ public class QuizDao {
 				pstqo.setInt(3, question.getSlectedAnswer());
 				pstqo.execute();
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return quizId;
 	}
 
 	public Quiz getQuizAnswers(int quizId) {// retrieve quiz details and answers for a user from database based on quiz

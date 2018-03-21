@@ -38,6 +38,10 @@ public class Question {
 		this.lstPossibleAnswer.add(possibleAnswer);
 	}
 
+	public void setLstPossibleAnswer(List<QuestionOption> lstPossibleAnswer) {
+		this.lstPossibleAnswer = lstPossibleAnswer;
+	}
+	
 	public void removePossibleAnswer(QuestionOption possibleAnswer) {
 		int indexAn = this.lstPossibleAnswer.indexOf(possibleAnswer);
 		this.lstPossibleAnswer.remove(indexAn);
