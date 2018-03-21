@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Course Dao
+ * Encrypt password
  * 
  * @author Carlton Ellis
  * @date 2018-03-19
