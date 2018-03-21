@@ -59,15 +59,13 @@ public class ResultController extends HttpServlet {
 		String date = request.getParameter("date");
 		String startTime = request.getParameter("startTime");
 		String courseID = request.getParameter("courseID");
-		String answer = request.getParameter("answer");
+		String grade = request.getParameter("score");
+		//String answer = request.getParameter("answer");
 		Long timeEnd = System.nanoTime() / 1000000000 ;
 		Long timeStart = Long.valueOf(startTime) / 1000000000;
 		
-		System.out.println("start time " + timeStart);
-		System.out.println("end time " + timeEnd);
-		
-		// Convert to JSON object
-		JSONParser parser = new JSONParser();
+		// Convert to JSON object - is not used now
+		/*JSONParser parser = new JSONParser();
 		JSONObject jsonob = new JSONObject();
 		System.out.println("answer " + answer);
 		try {
@@ -75,13 +73,13 @@ public class ResultController extends HttpServlet {
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		// Calculate total time
 		Long totalTime = timeEnd - timeStart;
 		
-		// Get list question from database
-		QuestionDao qd = new QuestionDao();
+		// Get list question from database - is not use now
+		/*QuestionDao qd = new QuestionDao();
 		Set<String> keys = jsonob.entrySet();
 		int grade = 0;
 		for (String key : keys) {
@@ -94,13 +92,13 @@ public class ResultController extends HttpServlet {
 					break;
 				}
 			}
-		}
+		}*/
 		
 		// Create quiz and insert to database
 		User user = (User)request.getSession().getAttribute("user");
 		Quiz q = new Quiz(user.getId(), Integer.valueOf(courseID), date, timeStart.toString());
 		q.setTimeEnd(timeEnd.toString());
-		q.setScore(grade);
+		q.setScore(Float.valueOf(grade));
 		QuizDao quizDB = new QuizDao();
 		int quizID = quizDB.insertQuizDetails(q);
 		
@@ -109,7 +107,7 @@ public class ResultController extends HttpServlet {
 		
 		dataResult.put("date", q.getDateTaken());
 		dataResult.put("time_duration", totalTime);
-		dataResult.put("score", grade);
+		//dataResult.put("score", grade);
 		
 		out.print(dataResult);
 		out.flush();	
