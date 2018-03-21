@@ -1,6 +1,6 @@
 package com.wap.dao;
 /**
- * Question Dao
+ * QuestionDao
  * 
  * @author Carlton Ellis
  * @date 2018-03-20
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.wap.domain.Question;
+import com.wap.domain.QuestionOption;
 import com.wap.domain.Quiz;
 import com.wap.utils.DBConnection;
 
@@ -26,7 +27,7 @@ public class QuizDao {
 	}
 
 	public int insertQuizDetails(Quiz quiz) { // Save quiz record and quiz answers to database
-		
+
 		int quizId = 0;
 		try {
 			// insert quiz record
@@ -47,19 +48,11 @@ public class QuizDao {
 			System.out.println("Inserted quiz record's ID: " + quizId);
 
 			// insert quiz answers
-			qry = "insert into quizanswers(quizid, questionid, questionoptionid) values(?,?,?)";
-			for (Question question : quiz.getLstQuestions()) {
 
-				PreparedStatement pstqo = con.prepareStatement(qry);
-				pstqo.setInt(1, quizId);
-				pstqo.setInt(2, question.getId());
-				pstqo.setInt(3, question.getSlectedAnswer());
-				pstqo.execute();
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return quizId;
 	}
 
@@ -117,5 +110,23 @@ public class QuizDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public void SaveResults(List<QuestionOption> questionOtions, Quiz quiz) {
+		int quizId = quiz.getId();
+
+		try {
+			String qry = "insert into quizanswers(quizid, questionid, questionoptionid) values(?,?,?)";
+			for (QuestionOption questionOtion : questionOtions) {
+
+				PreparedStatement pstqo = con.prepareStatement(qry);
+				pstqo.setInt(1, quizId);
+				pstqo.setInt(2, questionOtion.getQuestionid());
+				pstqo.setInt(3, questionOtion.getId());
+				pstqo.execute();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
