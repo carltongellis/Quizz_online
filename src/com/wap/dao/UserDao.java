@@ -45,8 +45,8 @@ public class UserDao {
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("fname"), rs.getString("lname"), 
-									rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("username"), rs.getString("fname"), 
+									rs.getString("lname"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 				return user;
 			}
@@ -63,8 +63,8 @@ public class UserDao {
 			pst.setString(1, username);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("fname"), rs.getString("lname"), 
-									rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("username"), rs.getString("fname"), 
+									rs.getString("lname"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 				return user;
 			}
@@ -81,8 +81,8 @@ public class UserDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("fname"), rs.getString("lname"),
-									rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("username"), rs.getString("fname"), 
+									rs.getString("lname"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 
 				userList.add(user);
