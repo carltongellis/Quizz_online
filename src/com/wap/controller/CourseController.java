@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -71,9 +72,14 @@ public class CourseController extends HttpServlet {
 		QuestionDao questionDao = new QuestionDao();
 		List<Question> lstQuestion = questionDao.getRandomQuizQuestionList(course.getId(), 10);
 		
+		// Get date
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");
+		LocalDateTime date = LocalDateTime.now();
+		String formatDateTime = date.format(formatter);
+		
 		// Send to UI
 		request.setAttribute("questions", lstQuestion);
-		request.setAttribute("date", LocalDateTime.now().toString());
+		request.setAttribute("date", formatDateTime);
 		request.setAttribute("startTime", startTime.toString());
 		request.setAttribute("courseID", buttonCourseID);
 		
