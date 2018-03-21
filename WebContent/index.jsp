@@ -26,7 +26,7 @@
                         <!-- <span>Non-Profit Organization</span> -->
                         <h1>Quizz online</h1>
                         <h3>At MUM, self-exploration isn't just an intellectual process. It's the discovery of your own innermost nature and your place in the world.</h3>
-                        <a class="btn btn-lg btn-primary site-btn" href="ListCourseController">Get Started</a>
+                        <a class="btn btn-lg btn-primary site-btn" href="Courses">Get Started</a>
                  
 
                 </div>
