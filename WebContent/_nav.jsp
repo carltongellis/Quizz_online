@@ -23,9 +23,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="index"><a href="/Quizz_online/index.jsp">Home</a></li>
         <li><a href="about.jsp">About Us</a></li>
+        <li><a href="Courses">Courses</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
         <c:if test = "${user != null}">
-          <li><a href="Courses">Courses</a></li>
           <li><a href="History">History</a></li>
           <li><a href="profile.jsp">Profile</a></li>
           <li class="dropdown">
