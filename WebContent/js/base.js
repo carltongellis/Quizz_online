@@ -102,7 +102,7 @@ $(function(){
     var json = {};
 
     $("form#formExam label.active input").each(function() {
-      json[$(this).attr("name").replace("qid_", "")] = $(this).attr("data-id");
+      json[$(this).attr("name")] = $(this).attr("data-id");
       if ($(this).val() == "1") {
         score++
       }
@@ -117,7 +117,7 @@ $(function(){
         startTime: $("input[name=startTime]").val(),
         courseID: $("input[name=courseID]").val(),
         score: score,
-        listQuestionAnswered: json
+        listQuestionAnswered: JSON.stringify(json)
       }
     }).done(function (data) {
       $('#timer').timer('remove');

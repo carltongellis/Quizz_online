@@ -11,7 +11,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
-        <h2 class="text-primary">${courseName} Quizz</h2>
+        <h2 class="text-primary">${courseName} Quiz</h2>
         <div class="row">
           <div class="col-xs-12 col-md-8 col-sm-12 question_box">
             <form action="Result" id="formExam" method="POST">

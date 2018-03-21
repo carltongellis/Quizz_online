@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.wap.domain.Question;
-import com.wap.domain.QuestionOption;
 import com.wap.domain.Quiz;
 import com.wap.utils.DBConnection;
 
@@ -112,19 +111,18 @@ public class QuizDao {
 		return null;
 	}
 
-	public void SaveResults(List<QuestionOption> questionOtions, Quiz quiz) {
-		int quizId = quiz.getId();
+	/**
+	 * Vy Nguyen modifiled - 2018-03-21
+	 * */
+	public void saveResults(int quizId, int questionId, int userAnswerId) {
 
 		try {
 			String qry = "insert into quizanswers(quizid, questionid, questionoptionid) values(?,?,?)";
-			for (QuestionOption questionOtion : questionOtions) {
-
-				PreparedStatement pstqo = con.prepareStatement(qry);
-				pstqo.setInt(1, quizId);
-				pstqo.setInt(2, questionOtion.getQuestionid());
-				pstqo.setInt(3, questionOtion.getId());
-				pstqo.execute();
-			}
+			PreparedStatement pstqo = con.prepareStatement(qry);
+			pstqo.setInt(1, quizId);
+			pstqo.setInt(2, questionId);
+			pstqo.setInt(3, userAnswerId);
+			pstqo.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
