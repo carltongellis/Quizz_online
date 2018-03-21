@@ -3,8 +3,20 @@ package com.wap.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Course Dao
+ * 
+ * @author Carlton Ellis
+ * @date 2018-03-19
+ */
+
 public class Encrypt {
-	public static String HashPassword(String passwordToHash) {
+	public static String HashPassword(String passwordToHash) {// Password Hashing
+		/*
+		 * Method taken from:
+		 * https://howtodoinjava.com/security/how-to-generate-secure-password-hash-md5-
+		 * sha-pbkdf2-bcrypt-examples/
+		 */
 		passwordToHash += "Salt@73@#$_";
 		String generatedPassword = null;
 		try {
