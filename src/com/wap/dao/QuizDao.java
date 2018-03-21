@@ -129,4 +129,29 @@ public class QuizDao {
 			e.printStackTrace();
 		}
 	}
+
+	public Quiz getQuizTakenById(int id) {// return a quiz taken based on quiz id
+		try {
+			String qry = "Select * from quiz where id=?";
+			PreparedStatement pst = con.prepareStatement(qry);
+			pst.setInt(1, id);
+
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+
+				Quiz quiz = new Quiz(rs.getInt("userid"), rs.getInt("courseid"), rs.getString("date"),
+						rs.getString("timestart"));
+
+				quiz.setScore(rs.getFloat("score"));
+				quiz.setId(rs.getInt("id"));
+				quiz.setTimeEnd(rs.getString("timeend"));
+				return quiz;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }
