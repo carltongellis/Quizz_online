@@ -51,7 +51,7 @@ $(function(){
       } else {
         $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
         $("#message").append("<li>Register successfull</li>");
-        window.location.href = "/Quizz_online/login.jsp";
+        window.location.href = "Login";
       }
       $("#message").append("</ul>");
     });
