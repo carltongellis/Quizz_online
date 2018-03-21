@@ -1,5 +1,6 @@
 <%@ page import = "com.wap.domain.User" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "WEB-INF/custom.tld" prefix = "ct" %> 
 <% User user = (User) request.getSession().getAttribute("user"); %>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -12,7 +13,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/Quizz_online/index.jsp">
-      	<img alt="logo" src="img/logo.png" class="logo">
+      	<ct:ct_img alt="logo" src="img/logo.png" className="logo"/>
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
