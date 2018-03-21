@@ -3,6 +3,7 @@ package com.wap.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -55,6 +56,8 @@ public class SignUpController extends HttpServlet {
 		String userPassword = request.getParameter("userPass");
 		String confirmPassword = request.getParameter("password");
 		String userEmail = request.getParameter("userEmail");
+		String fName = request.getParameter("fName");
+		String lName = request.getParameter("lName");
 		
 		// Regular expression
 		String userNameRegx = "^[a-zA-Z0-9._-]{6,}$";
@@ -82,6 +85,16 @@ public class SignUpController extends HttpServlet {
 			isFailed = true;
 		}
 		
+		if (fName.isEmpty()) {
+			failedMessage.add("User first name is empty.");
+			isFailed = true;
+		}
+		
+		if (lName.isEmpty()) {
+			failedMessage.add("User last name is empty.");
+			isFailed = true;
+		}
+		
 		if (!userName.matches(userNameRegx)) {
 			failedMessage.add("User name is less than 6 charactors and is not match charactors.");
 			isFailed = true;
@@ -102,6 +115,21 @@ public class SignUpController extends HttpServlet {
 			isFailed = true;
 		}
 		
+		// Check duplicate user name and email
+		UserDao userDao = new UserDao();
+		List<User> lstUsers = userDao.getUserList();
+		for (User u : lstUsers) {
+			if (!u.getUsername().equals(userName)) {
+				failedMessage.add("User name is exists.");
+				isFailed = true;
+			}
+			
+			if (!u.getEmail().equals(userEmail)) {
+				failedMessage.add("User email is exists.");
+				isFailed = true;
+			}
+		}
+		
 		if (isFailed) { // Verify any field is failed
 			jsob.put("message", failedMessage);
 				
@@ -111,7 +139,6 @@ public class SignUpController extends HttpServlet {
 			
 		} else { // Pass case
 			// Create user
-			UserDao userDao = new UserDao();
 			userDao.insertUsert(new User(userName, userEmail, userPassword));
 			
 			// Go to Login page
