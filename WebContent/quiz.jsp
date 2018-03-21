@@ -48,7 +48,7 @@
                           <div class="quiz" id="quiz" data-toggle="buttons">
                             <c:forEach var="pAnswer" items="${question.lstPossibleAnswer}">
                               <label class="element-animation1 btn btn-lg btn-primary btn-block">
-                                <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="qid_${question.id}" class="answer" value="${pAnswer.isAnswer}">
+                                <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="qid_${question.id}" class="answer" value="${pAnswer.isAnswer}" data-id="${pAnswer.id}">
                                 <span class="value">${pAnswer.text}</span>
                               </label>
                             </c:forEach>

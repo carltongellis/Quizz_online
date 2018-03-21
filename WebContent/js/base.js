@@ -99,8 +99,10 @@ $(function(){
   // Call AJAX to submit form Exam - Tan Tho Nguyen
   $("form#formExam").submit(function(e) {
     var score = 0;
+    var json = {};
 
     $("form#formExam label.active input").each(function() {
+      json[$(this).attr("name").replace("qid_", "")] = $(this).attr("data-id");
       if ($(this).val() == "1") {
         score++
       }
@@ -114,7 +116,8 @@ $(function(){
         date: $("input[name=date]").val(),
         startTime: $("input[name=startTime]").val(),
         courseID: $("input[name=courseID]").val(),
-        score: score
+        score: score,
+        listQuestionAnswered: json
       }
     }).done(function (data) {
       $('#timer').timer('remove');
