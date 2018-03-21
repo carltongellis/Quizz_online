@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Set;
 
-import javax.json.Json;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,11 +55,13 @@ public class ResultController extends HttpServlet {
 		// Init response text/html
 		response.setContentType("application/json");
 		
+		// Get parameters
 		String date = request.getParameter("date");
 		String startTime = request.getParameter("startTime");
 		String courseID = request.getParameter("courseID");
 		String answer = request.getParameter("answer");
-		Long timeEnd = System.nanoTime();
+		Long timeEnd = System.nanoTime() / 1000000000 ;
+		Long timeStart = Long.valueOf(startTime) / 1000000000;
 		
 		// Convert to JSON object
 		JSONParser parser = new JSONParser();
@@ -73,7 +74,7 @@ public class ResultController extends HttpServlet {
 		}
 		
 		// Calculate total time
-		Long totalTime = (timeEnd - Long.valueOf(startTime)) / 1000000000;
+		Long totalTime = timeEnd - timeStart;
 		
 		// Get list question from database
 		QuestionDao qd = new QuestionDao();

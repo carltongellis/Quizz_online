@@ -15,11 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.wap.dao.CourseDao;
 import com.wap.dao.QuestionDao;
-import com.wap.dao.QuizDao;
 import com.wap.domain.Course;
 import com.wap.domain.Question;
-import com.wap.domain.Quiz;
-import com.wap.domain.User;
 
 /**
  * Servlet implementation class Course
