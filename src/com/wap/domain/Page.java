@@ -42,8 +42,8 @@ public class Page {
 	 * user sign up
 	*/
 	public void createUser(String userName, String email, String password) {
-		User newUser = new User(userName, email, password);
-		this.addUser(newUser);
+		//User newUser = new User(userName, email, password);
+		//this.addUser(newUser);
 
 		// Increase number of user
 		this.numberUser++;

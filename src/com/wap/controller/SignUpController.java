@@ -2,6 +2,7 @@ package com.wap.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -118,16 +119,21 @@ public class SignUpController extends HttpServlet {
 		// Check duplicate user name and email
 		UserDao userDao = new UserDao();
 		List<User> lstUsers = userDao.getUserList();
+		List<String> allUserName = new ArrayList<String>();
+		List<String> allEmails = new ArrayList<String>();
 		for (User u : lstUsers) {
-			if (!u.getUsername().equals(userName)) {
-				failedMessage.add("User name is exists.");
-				isFailed = true;
-			}
-			
-			if (!u.getEmail().equals(userEmail)) {
-				failedMessage.add("User email is exists.");
-				isFailed = true;
-			}
+			allUserName.add(u.getUsername());
+			allEmails.add(u.getEmail());
+		}
+		
+		if (!allUserName.contains(userName)) {
+			failedMessage.add("User name is exists.");
+			isFailed = true;
+		}
+		
+		if (!allEmails.contains(userEmail)) {
+			failedMessage.add("User email is exists.");
+			isFailed = true;
 		}
 		
 		if (isFailed) { // Verify any field is failed
@@ -139,7 +145,7 @@ public class SignUpController extends HttpServlet {
 			
 		} else { // Pass case
 			// Create user
-			userDao.insertUsert(new User(userName, userEmail, userPassword));
+			userDao.insertUsert(new User(userName, fName, lName, userEmail, userPassword));
 			
 			// Go to Login page
 			RequestDispatcher rq =  request.getRequestDispatcher("login.jsp");

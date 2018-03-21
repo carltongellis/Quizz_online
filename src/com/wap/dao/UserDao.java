@@ -25,11 +25,13 @@ public class UserDao {
 
 	public void insertUsert(User user) { // Save new user to database
 		try {
-			String qry = "insert into user(username, email, password) values(?,?,?)";
+			String qry = "insert into user(fname, lname, username, email, password) values(?,?,?)";
 			PreparedStatement pst = con.prepareStatement(qry);
-			pst.setString(1, user.getUsername());
-			pst.setString(2, user.getEmail());
-			pst.setString(3, user.getPassword());
+			pst.setString(1, user.getfName()); // Add by vynguyen
+			pst.setString(2, user.getlName()); // Add by vynguyen
+			pst.setString(3, user.getUsername());
+			pst.setString(4, user.getEmail());
+			pst.setString(5, user.getPassword());
 			pst.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,7 +45,8 @@ public class UserDao {
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("fname"), rs.getString("lname"), 
+									rs.getString("username"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 				return user;
 			}
@@ -60,7 +63,8 @@ public class UserDao {
 			pst.setString(1, username);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("fname"), rs.getString("lname"), 
+									rs.getString("username"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 				return user;
 			}
@@ -77,7 +81,8 @@ public class UserDao {
 			PreparedStatement pst = con.prepareStatement(qry);
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString("username"), rs.getString("email"), rs.getString("password"));
+				User user = new User(rs.getString("fname"), rs.getString("lname"),
+									rs.getString("username"), rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("id"));
 
 				userList.add(user);
@@ -102,12 +107,14 @@ public class UserDao {
 
 	public void updateUser(User user) {// update a user in DB based on id
 		try {
-			String qry = "update user set username=?, email=?, password=? where id=?";
+			String qry = "update user set fname=?, lname=?, username=?, email=?, password=? where id=?";
 			PreparedStatement pst = con.prepareStatement(qry);
-			pst.setString(1, user.getUsername());
-			pst.setString(2, user.getEmail());
-			pst.setString(3, user.getPassword());
-			pst.setInt(4, user.getId());
+			pst.setString(1, user.getfName()); // Add by vynguyen
+			pst.setString(2, user.getlName()); // Add by vynguyen
+			pst.setString(3, user.getUsername());
+			pst.setString(4, user.getEmail());
+			pst.setString(5, user.getPassword());
+			pst.setInt(6, user.getId());
 			pst.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

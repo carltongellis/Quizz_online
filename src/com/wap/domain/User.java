@@ -15,12 +15,36 @@ public class User {
 	private String username;
 	private String email;
 	private String password;
+	private String fName;
+	private String lName;
 	private HashMap<String, Quiz> mapQuizTaken = new HashMap<String, Quiz>();
 
-	public User(String username, String email, String password) {
+	public User(String username, String fName, String lName, String email, String password) {
 		this.username = username;
+		this.fName = fName;
+		this.lName = lName;
 		this.email = email;
 		this.password = password;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public Integer getId() {

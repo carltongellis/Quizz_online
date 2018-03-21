@@ -2,7 +2,12 @@ package com.wap.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -68,7 +73,7 @@ public class CourseController extends HttpServlet {
 		
 		// Send to UI
 		request.setAttribute("questions", lstQuestion);
-		request.setAttribute("date", LocalDate.now().toString());
+		request.setAttribute("date", LocalDateTime.now().toString());
 		request.setAttribute("startTime", startTime.toString());
 		request.setAttribute("courseID", buttonCourseID);
 		

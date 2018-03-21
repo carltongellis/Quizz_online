@@ -51,6 +51,8 @@ public class ProfileController extends HttpServlet {
 		// Init response text/html
 		response.setContentType("application/json");
 		
+		String fName = request.getParameter("fName");
+		String lName = request.getParameter("lName");
 		String userName = request.getParameter("userName");
 		String userEmail = request.getParameter("email");
 		String userNewPassword = request.getParameter("newPassword");
@@ -80,12 +82,24 @@ public class ProfileController extends HttpServlet {
 			failedMessage.add("User new password is different with confirm new password.");
 			isFailed = true;
 		}
+		
+		if (fName.isEmpty()) {
+			failedMessage.add("User first name is empty.");
+			isFailed = true;
+		}
+		
+		if (lName.isEmpty()) {
+			failedMessage.add("User last name is empty.");
+			isFailed = true;
+		}
 				
 		// Check new password
 		if (!isFailed) {
 			UserDao ud = new UserDao();
 			
 			User us = ud.getUserByUsername(userName);
+			us.setfName(fName);
+			us.setlName(lName);
 			us.setEmail(userEmail);
 			us.setPassword(userNewPassword);
 			
