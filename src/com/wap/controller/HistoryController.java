@@ -58,10 +58,10 @@ public class HistoryController extends HttpServlet {
 		
 		// Get all quiz in all course that user had taken with results inside
 		QuizDao qd = new QuizDao();
-		HashMap<String, List<Quiz>> mapCourseQuiz = new HashMap<String, List<Quiz>>();
+		HashMap<Course, List<Quiz>> mapCourseQuiz = new HashMap<Course, List<Quiz>>();
 		for (Course course : lstCourses) {
 			List<Quiz> lstQuiz = qd.getQuizTakenByCourseList(user.getId(), course.getId());
-			mapCourseQuiz.put(course.getName(), lstQuiz);
+			mapCourseQuiz.put(course, lstQuiz);
 		}
 		
 		request.setAttribute("mapCourseQuiz", mapCourseQuiz);

@@ -101,7 +101,7 @@
               </div>
               <div class="modal-footer">
                 <a href='#' onclick='location.reload(true); return false;' class="btn btn-default">Retake</a>
-                <a href="Courses" class="btn btn-primary">List courses</a>
+                <a href="History" class="btn btn-primary">History</a>
               </div>
             </div>
           </div>
