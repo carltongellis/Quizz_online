@@ -59,7 +59,7 @@ public class LoginController extends HttpServlet {
 		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
 			session = request.getSession(true);
 			session.setAttribute("user", user);
-			session.setMaxInactiveInterval(60);
+			session.setMaxInactiveInterval(86400); // 2 days
 
 			response.sendRedirect("index.jsp");
 		} else {

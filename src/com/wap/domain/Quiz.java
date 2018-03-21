@@ -18,8 +18,8 @@ public class Quiz {
 	private int courseid;
 	private String dateTaken;
 	private String timeStart;
-	private String timeEnd;
-	private float score; // percentage score
+	private String timeEnd = "";
+	private float score = 0; // percentage score
 	private List<Question> lstQuestions = new ArrayList<Question>();
 
 	public Quiz() {
