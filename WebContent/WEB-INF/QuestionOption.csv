@@ -2,4 +2,151 @@ id,questionid,text,isAnswer
 1,1,response.getCookies(),0
 2,1,request.getCookies(),1
 3,1,Cookies.getCookies(),0
-4,1,"None of above",0
+4,1,None of above,0
+5,2,The Type Selector,0
+6,2,The Universal Selector,0
+7,2,The Descendant Selector,0
+8,2,The Class Selector,1
+9,3, in,1
+10,3,mm,0
+11,3, pc,0
+12,3,pt,0
+13,4, in,0
+14,4,mm,0
+15,4,pc,1
+16,4,pt,0
+17,5, text-indent,0
+18,5,text-align,0
+19,5,text-decoration,1
+20,5,text-transform,0
+21,6,white-space,1
+22,6,text-shadow,0
+23,6,text-decoration,0
+24,6,text-transform,0
+25,7,:border-collapse,1
+26,7,:border-spacing,0
+27,7,:caption-side,0
+28,7,:empty-cells,0
+29,8,:border-bottom-width,0
+30,8,:border-top-width,1
+31,8,:border-left-width,0
+32,8,:border-right-width,0
+33,9,:border-bottom-width,0
+34,9,:border-top-width,0
+35,9,:border-left-width,0
+36,9,:border-right-width,1
+37,10,crosshair,0
+38,10,default,1
+39,10,pointer,0
+40,10,move,0
+41,11,Hyper Text Markup Language ,1
+42,11,Home Tool Markup Language,0
+43,11,Hyperlinks and Text Markup Language,0
+44,12,Mozilla,0
+45,12,Microsoft ,0
+46,12,The World Wide Web Consortium,1
+47,13,Head,0
+48,13,H1,1
+49,13,H6,0
+50,13,Heading,0
+51,14, break / ,0
+52,14,br /br ,0
+53,14,lb / ,0
+54,14, br / ,1
+55,15, bold,0
+56,15,b,1
+57,15,bb,0
+58,16,Italic,0
+59,16,I,1
+60,16,It,0
+61,17,"A url=""http://www.w3schools.com"">W3Schools.com",0
+62,17,"A href=""http://www.w3schools.com"">W3Schools",1
+63,17,A>http://www.w3schools.com,0
+64,17,"A name=""http://www.w3schools.com"">W3Schools.com",0
+65,18,Ol ,1
+66,18,DI,0
+67,18,UI,0
+68,18,List,0
+69,19,"Img alt=""MyImage"" image.gif /img ",0
+70,19,"Image src=""image.gif"" alt=""MyImage"" ",0
+71,19,"Img src=""image.gif"" alt=""MyImage"" ",1
+72,19,"Img href=""image.gif"" alt=""MyImage"" ",0
+73,20,Home.html,0
+74,20,Index.html,1
+75,20,Anything you want it to be.html,0
+76,20,The name of your website.html,0
+77,21,8 bit,1
+78,21,16 bit,0
+79,21,32 bit,0
+80,21,64 bit,0
+81,22, 0.0d,1
+82,22, 0.0f,0
+83,22,0,0
+84,22,not defined,0
+85,23,String is immutable.,0
+86,23,String can be created using new operator.,0
+87,23,String is a primary data type.,1
+88,23,None of the above.,0
+89,24,TRUE,0
+90,24,FALSE,1
+91,25, JRE is a java based GUI application.,0
+92,25,JRE is an application development framework.,0
+93,25,JRE is an implementation of the Java Virtual Machine which executes Java programs.,1
+94,25,None of the above.,0
+95,26,class declard final is a final class.,0
+96,26,Final classes are created so the methods implemented by that class cannot be overridden.,0
+97,26,It can't be inherited.,0
+98,26,All of the above.,1
+99,27,These are classes that allow primitive types to be accessed as objects.,1
+100,27,These are classes that wraps functionality of an existing class.,0
+101,27,Both of the above.,0
+102,27,None of the above.,0
+103,28,True.,1
+104,28,False.,0
+105,29,If an error occurs.,0
+106,29, If an exception occurs.,1
+107,29,Both of the above.,0
+108,29,None of the above.,0
+109,30, A class needs to be instantiated as an object before being used,1
+110,30, An objects exists in memory in run time,0
+111,30, Class and object are just different names for the same thing,0
+112,30," An object is a variable, where its type is the class used to declare the variable",0
+113,31,A java array is always an object,0
+114,31,Length of array can be changed after creation of array,1
+115,31,Arrays in Java are always allocated on heap,0
+116,32,which is written in C++,0
+117,32,which requires an intermediate layer,0
+118,32,which communicates through Java sockets,1
+119,32,which translates JDBC function calls into API not native to DBMS,0
+120,33,Packages avoid name clashes,0
+121,33,"Classes, even though they are visible outside their package, can have fields visible to packages only",0
+122,33,"We can have hidden classes that are used by the packages, but not visible outside.",0
+123,33,All of the above,1
+124,34,Only (a) is TRUE.,1
+125,34,Only (b) is TRUE,0
+126,34,Both (a) and (b) are TRUE,0
+127,34,Neither (a) nor (b) is TRUE,0
+128,35,"When a class is made final, a sublcass of it can not be created.",0
+129,35,"When a method is final, it can not be overridden.",0
+130,35,"When a variable is final, it can be assigned value only once",0
+131,35,All of the above,1
+132,36,Only (a) is TRUE,0
+133,36,Only (b) is TRUE.,1
+134,36,Both (a) and (b) are TRUE,0
+135,36,Neither (a) nor (b) are TRUE,0
+136,37,RunTimeExceptions,0
+137,37,Throwable,1
+138,37,Catchable,0
+139,37,None of the above,0
+140,38,"1, 2 and 3",1
+141,38,1 and 2,0
+142,38,2 and 3,0
+143,38,1 and 3,0
+144,39,instanceof,0
+145,39,sizeof,1
+146,39,new,0
+147,39,>>>=,0
+148,40,Programming Language,0
+149,40,Platform,0
+150,40,Both Programming Language and Platform,1
+151,40,Abstract Machine ,0
