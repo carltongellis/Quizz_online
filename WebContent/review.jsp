@@ -71,7 +71,7 @@
               <h2>Notice</h2>
             </div>
             <div class="panel-body">
-              <input type="button" class="btn btn-success"> Correct answer
+              <input type="button" class="btn btn-success"> Corrected answer
               <input type="button" class="btn btn-danger"> Your wrong answer
             </div>
             
