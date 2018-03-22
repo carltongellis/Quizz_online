@@ -48,18 +48,28 @@ public class SignUpController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		// Avoid null parameter
+		String userName = "";
+		String userPassword = "";
+		String confirmPassword = "";
+		String userEmail = "";
+		String fName = "";
+		String lName = "";
+		
+		// Get printer
 		PrintWriter out = response.getWriter();
 		
 		// Init response text/html
 		response.setContentType("application/json");
 		
 		// Get parameters value
-		String userName = request.getParameter("userName");
-		String userPassword = request.getParameter("userPass");
-		String confirmPassword = request.getParameter("password");
-		String userEmail = request.getParameter("userEmail");
-		String fName = request.getParameter("fName");
-		String lName = request.getParameter("lName");
+		userName = request.getParameter("userName");
+		userPassword = request.getParameter("userPass");
+		confirmPassword = request.getParameter("password");
+		userEmail = request.getParameter("userEmail");
+		fName = request.getParameter("fName");
+		lName = request.getParameter("lName");
 		
 		// Regular expression
 		String userNameRegx = "^[a-zA-Z0-9._-]{6,}$";

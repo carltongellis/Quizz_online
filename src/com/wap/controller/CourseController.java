@@ -57,7 +57,8 @@ public class CourseController extends HttpServlet {
 		}
 		
 		// Get parameter
-		String buttonCourseID = request.getParameter("bCourse");
+		String buttonCourseID = "";
+		buttonCourseID = request.getParameter("bCourse");
 		
 		// Get course from database
 		CourseDao cd = new CourseDao();

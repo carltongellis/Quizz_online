@@ -48,6 +48,13 @@ public class ResultController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// Avoid null parameter
+		String date = "";
+		String startTime = "";
+		String courseID = "";
+		String grade = "";
+		String answer = "";
+		
 		// Check user login or not
 		User user = (User)request.getSession().getAttribute("user"); 
 		if (user == null) {
@@ -62,11 +69,11 @@ public class ResultController extends HttpServlet {
 		response.setContentType("application/json");
 		
 		// Get parameters
-		String date = request.getParameter("date");
-		String startTime = request.getParameter("startTime");
-		String courseID = request.getParameter("courseID");
-		String grade = request.getParameter("score");
-		String answer = request.getParameter("listQuestionAnswered");
+		date = request.getParameter("date");
+		startTime = request.getParameter("startTime");
+		courseID = request.getParameter("courseID");
+		grade = request.getParameter("score");
+		answer = request.getParameter("listQuestionAnswered");
 		Long timeEnd = System.nanoTime() / 1000000000 ;
 		Long timeStart = Long.valueOf(startTime) / 1000000000;
 		

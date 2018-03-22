@@ -47,6 +47,14 @@ public class ProfileController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// Avoid null parameters
+		String fName = "";
+		String lName = "";
+		String userName = "";
+		String userEmail = "";
+		String userNewPassword = "";
+		String userConfirmNewPassword = "";
+		
 		// Check user login or not
 		User user = (User)request.getSession().getAttribute("user"); 
 		if (user == null) {
@@ -59,12 +67,12 @@ public class ProfileController extends HttpServlet {
 		// Init response text/html
 		response.setContentType("application/json");
 		
-		String fName = request.getParameter("fName");
-		String lName = request.getParameter("lName");
-		String userName = request.getParameter("userName");
-		String userEmail = request.getParameter("email");
-		String userNewPassword = request.getParameter("newPassword");
-		String userConfirmNewPassword = request.getParameter("confirmNewPassword");
+		fName = request.getParameter("fName");
+		lName = request.getParameter("lName");
+		userName = request.getParameter("userName");
+		userEmail = request.getParameter("email");
+		userNewPassword = request.getParameter("newPassword");
+		userConfirmNewPassword = request.getParameter("confirmNewPassword");
 		
 		// Regular expression
 		String userEmailRegx = "^[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$";
