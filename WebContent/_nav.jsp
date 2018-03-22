@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav navbar-right">
-        <li class="index"><a href="/Quizz_online/index.jsp">Home</a></li>
+        <li class="index"><a href="index.jsp">Home</a></li>
         <li><a href="about.jsp">About Us</a></li>
         <li><a href="Courses">Courses</a></li>
         <!-- Check user status - Tan Tho Nguyen -->
