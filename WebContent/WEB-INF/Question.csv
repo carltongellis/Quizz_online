@@ -34,7 +34,7 @@ id,courseid,text
 33,2,Which of the following is/are advantages of packages?
 34,2,Which of the following statement(s) is/are TRUE regarding Java Servelets ? (a) A Java Servlet is a server-side component that runs on the web server and extends the capabilities of a server. (b) A Servlet can use the user interface classes like AWT or Swing. 
 35,2,What is the use of final keyword in Java?
-36,2,Which of the following statements is/are TRUE regarding JAVA ? (a) Constants that cannot be changed are declared using the ‘static’ keyword. (b) A class can only inherit one class but can implement multiple interfaces. 
+36,2,Which of the following statements is/are TRUE regarding JAVA ? (a) Constants that cannot be changed are declared using the 'static' keyword. (b) A class can only inherit one class but can implement multiple interfaces. 
 37,2,Which of these is a super class of all errors and exceptions in the Java language?
 38,2,"Which of the following is true about inheritance in Java. 1) In Java all classes inherit from the Object class directly or indirectly. The Object class is root of all classes. 2) Multiple inheritance is not allowed in Java. 3) Unlike C++, there is nothing like type of inheritance in Java where we can specify whether the inheritance is protected, public or private."
 39,2,Which of the following is not an operator in Java?
