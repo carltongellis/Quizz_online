@@ -74,7 +74,7 @@
               <h3 id="timer" class="text-center text-danger"></h3>
             </div>
             <div class="panel-footer text-center">
-              <input type="submit" id="btnSubmitResult" class="btn btn-primary btn-lg btn-block" value="Submit" form="formExam">
+              <input type="submit" id="btnSubmitResult" class="btn btn-primary btn-lg btn-block" value="Submit" form="formExam" disabled>
             </div>
             
           </div>
@@ -121,7 +121,7 @@
     $('#timer').timer({
       duration: '10m',
       callback: function() {
-        $("#btnSubmitResult").click();
+        $("#formExam").submit();
       }
     });
   </script>

@@ -120,6 +120,14 @@ $(function(){
 
     e.preventDefault();
   });
+  
+  
+  // Check to show submit button every time user choose answer - Tan Tho Nguyen  
+  $(".quiz label").click(function() {
+	  if ($("form#formExam label.active").length + 1 >= 10) {
+		  $("#btnSubmitResult").removeAttr("disabled");
+	  }
+  });
 
 
 
