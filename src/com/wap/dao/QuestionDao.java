@@ -93,7 +93,7 @@ public class QuestionDao {
 		// retrieve n amount of random questions from database based on course id
 		try {
 			List<Question> questionList = new ArrayList<Question>();
-			String qry = "SELECT * FROM Question where courseid=? ORDER BY RAND() LIMIT 0,?";
+			String qry = "SELECT * FROM question where courseid=? ORDER BY RAND() LIMIT 0,?";
 			PreparedStatement pst = con.prepareStatement(qry);
 			pst.setInt(1, courseid);
 			pst.setInt(2, questionAmount);
