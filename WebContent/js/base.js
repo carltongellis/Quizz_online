@@ -73,6 +73,7 @@ $(function(){
       } else {
         $("#message").removeClass("alert alert-danger").addClass("alert alert-success");;
         $("#message").append("<li>Update successfull</li>");
+        window.location.href = "index.jsp";
       }
       $("#message").append("</ul>");
     });
