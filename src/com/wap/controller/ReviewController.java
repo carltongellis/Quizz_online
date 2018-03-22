@@ -46,7 +46,8 @@ public class ReviewController extends HttpServlet {
 		}
 		
 		// Get parameter
-		String quizID = request.getParameter("quizID");
+		String quizID = "";
+		quizID = request.getParameter("quizID");
 		
 		// Load from database
 		QuizDao qd = new QuizDao();
